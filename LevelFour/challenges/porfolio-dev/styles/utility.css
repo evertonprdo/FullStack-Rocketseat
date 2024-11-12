@@ -1,0 +1,40 @@
+.bg-image {
+  --url-bg-image: url('/assets/images/Background_Intro.png');
+
+  background-image: var(--url-bg-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.red {
+  color: var(--brand-red);
+}
+
+.grid {
+  display: grid;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.sect-title {
+  margin-bottom: 56px;
+  text-align: center;
+
+  &>span {
+    font: var(--sub-title);
+    color: var(--brand-red);
+  }
+
+  &>h2 {
+    font: var(--title-md);
+    color: var(--gray-600);
+  }
+}
