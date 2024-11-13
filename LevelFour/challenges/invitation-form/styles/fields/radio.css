@@ -1,0 +1,41 @@
+#type {
+  gap: .25rem;
+  padding: .25rem;
+  border-radius: .5rem;
+  height: 3rem;
+
+  background-color: var(--input-base);
+  border: 1px solid var(--input-stroke);
+}
+
+#type > .radio-inner {
+  flex: 1;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: .5rem;
+  padding: .25rem;
+  border-radius: .25rem;
+
+  font: var(--text-sm);
+
+  position: relative;
+  & input,
+  & input:focus,
+  & input:hover {
+    all: unset;
+    position: absolute;
+    inset: 0;
+  }
+
+  &:has(:checked) {
+    background-color: var(--shape-button);
+    font: var(--text-bold-sm);
+    color: var(--text-heading-color);
+
+    & path {
+      stroke: var(--brand-light);
+    }
+  }
+}

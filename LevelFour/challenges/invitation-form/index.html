@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation Form</title>
+
+  <link rel="stylesheet" href="styles/index.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <aside>
+      <img src="assets/Logo.svg" alt="logo">
+      <div>
+        <h1>
+          Festive
+        </h1>
+        <span>
+          Create a digital invitation for your event
+        </span>
+      </div>
+    </aside>
+
+    <main>
+      <div class="main-container">
+        <h2>Create your invite</h2>
+
+        <form method="post" enctype="multipart/form-data">
+          <fieldset id="about">
+            <div class="legend-wrapper">
+              <img src="assets/icons/calendar.svg" alt="calendar icon">
+              <legend>About the event</legend>
+            </div>
+
+            <div class="fields-container grid grid-col-2">
+              <div class="input-wrapper">
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text" placeholder="Event name">
+              </div>
+
+              <div class="input-wrapper">
+                <label for="start">Start</label>
+                <input id="start" name="start" type="datetime-local" placeholder="MM/DD/AAAA, --:--" lang="en">
+              </div>
+
+              <div class="input-wrapper">
+                <label for="end">End</label>
+                <input id="end" name="end" type="datetime-local" placeholder="MM/DD/AAAA, --:--" lang="en">
+              </div>
+
+              <div class="input-wrapper">
+                <label for="type">Type</label>
+
+                <div id="type" class="radio-wrapper flex">
+                  <div class="radio-inner flex">
+                    <input type="radio" name="type" id="in-person">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.833 1.834A.833.833 0 0 0 5 2.667v11.5h7v-11.5a.833.833 0 0 0-.833-.833zM13 5.5V2.667A1.833 1.833 0 0 0 11.167.833H5.833A1.833 1.833 0 0 0 4 2.667V7.5h-.833a1.833 1.833 0 0 0-1.834 1.834v4a1.834 1.834 0 0 0 1.834 1.833h10.666a1.833 1.833 0 0 0 1.834-1.833v-6A1.833 1.833 0 0 0 13.833 5.5zm0 1v7.667h.833a.834.834 0 0 0 .834-.833v-6a.833.833 0 0 0-.834-.834zm-9 2h-.833a.833.833 0 0 0-.834.834v4a.833.833 0 0 0 .834.833H4zM6.667 4a.5.5 0 0 1 .5-.5h2.666a.5.5 0 1 1 0 1H7.167a.5.5 0 0 1-.5-.5m0 2.667a.5.5 0 0 1 .5-.5h2.666a.5.5 0 1 1 0 1H7.167a.5.5 0 0 1-.5-.5m0 2.667a.5.5 0 0 1 .5-.5h2.666a.5.5 0 1 1 0 1H7.167a.5.5 0 0 1-.5-.5m0 2.666a.5.5 0 0 1 .5-.5h2.666a.5.5 0 1 1 0 1H7.167a.5.5 0 0 1-.5-.5"
+                        fill="#869198" />
+                    </svg>
+                    <span>
+                      In person
+                    </span>
+                  </div>
+
+                  <div class="radio-inner flex">
+                    <input type="radio" name="type" id="online">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M2.667 4.5a.833.833 0 0 0-.834.833v5.334c0 .46.373.833.834.833h6.666c.46 0 .834-.373.834-.833V5.333a.833.833 0 0 0-.834-.833zm8.5 1.63v-.797A1.834 1.834 0 0 0 9.333 3.5H2.667C1.654 3.5.833 4.32.833 5.333v5.334c0 1.012.821 1.833 1.834 1.833h6.666c1.013 0 1.834-.82 1.834-1.833V9.6l2.705 1.803a.833.833 0 0 0 1.295-.693V5.247a.833.833 0 0 0-1.254-.72zm0 1.157V8.4l3 2V5.537z"
+                        fill="#869198" />
+                    </svg>
+                    <span>
+                      Online
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="local">Location</label>
+                <input id="local" name="local" type="url" placeholder="Address link">
+              </div>
+
+              <div class="textarea-wrapper">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" cols="30" rows="5"
+                  placeholder="Write about the event details"></textarea>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

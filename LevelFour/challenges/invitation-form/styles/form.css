@@ -1,0 +1,67 @@
+form {
+  margin-top: 2.5rem;
+}
+
+fieldset {
+  border: none;
+}
+
+.legend-wrapper {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+
+  font: var(--text-header-sm);
+  color: var(--text-heading-color);
+}
+
+fieldset + fieldset {
+  margin-top: 3rem;
+}
+
+label {
+  display: block;
+  margin-bottom: .75rem;
+
+  font: var(--text-sm);
+}
+
+.fields-container {
+  margin-top: 1.5rem;
+}
+
+#about > .fields-container {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "A A"
+    "B C"
+    "D E"
+    "F F";
+
+  gap: 1.5rem;
+
+  &>:nth-child(1) {
+    grid-area: A;
+  }
+
+  &>:nth-child(2) {
+    grid-area: B;
+  }
+
+  &>:nth-child(3) {
+    grid-area: C;
+  }
+
+  &>:nth-child(4) {
+    grid-area: D;
+  }
+
+  &>:nth-child(5) {
+    grid-area: E;
+  }
+
+  &>:nth-child(6) {
+    grid-area: F;
+  }
+}

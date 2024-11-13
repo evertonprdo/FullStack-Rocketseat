@@ -1,0 +1,62 @@
+#app {
+  display: grid;
+  grid-template-columns: 35% 65%;
+
+  height: 100vh;
+  max-width: 80rem;
+
+  gap: 1.25rem;
+  padding: 1.25rem;
+  margin-inline: auto;
+
+  overflow: hidden;
+  background-color: var(--shape-background);
+}
+
+aside {
+  --rgb-base-color: 33, 37, 38;
+  background:
+    linear-gradient(180deg,
+      rgba(var(--rgb-base-color), 0.8) 0%,
+      rgba(var(--rgb-base-color), 0.65) 20%,
+      rgba(var(--rgb-base-color), 0.3) 40.5%,
+      rgba(var(--rgb-base-color), 0.1) 100%),
+    url('../assets/Background.png') center bottom / cover;
+
+  border-radius: .75rem;
+  padding: 2rem;
+
+
+  & img {
+    height: 2.85rem;
+  }
+
+  & h1 {
+    font: var(--text-logo);
+    color: var(--accent-pink);
+    margin-block: 1rem .25rem;
+  }
+
+  & span {
+    font: 300 1rem var(--font-family-body);
+    color: var(--text-heading-color);
+  }
+}
+
+main {
+  background-color: var(--shape-body);
+  overflow: auto;
+
+  padding-block: 5rem;
+  border-radius: .75rem;
+
+  & .main-container {
+    max-width: 35rem;
+    margin-inline: auto;
+
+    & > h2 {
+      font: var(--text-header);
+      color: var(--text-heading-color);
+    }
+  }
+}
