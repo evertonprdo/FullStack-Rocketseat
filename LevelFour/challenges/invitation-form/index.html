@@ -18,14 +18,16 @@
 <body>
   <div id="app">
     <aside>
-      <img src="assets/Logo.svg" alt="logo">
-      <div>
-        <h1>
-          Festive
-        </h1>
-        <span>
-          Create a digital invitation for your event
-        </span>
+      <div class="aside-container">
+        <img src="assets/Logo.svg" alt="logo">
+        <div>
+          <h1>
+            Festive
+          </h1>
+          <span>
+            Create a digital invitation for your event
+          </span>
+        </div>
       </div>
     </aside>
 
@@ -33,7 +35,7 @@
       <div class="main-container">
         <h2>Create your invite</h2>
 
-        <form method="post" enctype="multipart/form-data">
+        <form class="grid" method="post" enctype="multipart/form-data">
           <fieldset id="about">
             <div class="legend-wrapper">
               <img src="assets/icons/calendar.svg" alt="calendar icon">
@@ -61,7 +63,7 @@
 
                 <div id="type" class="radio-wrapper flex">
                   <div class="radio-inner flex">
-                    <input type="radio" name="type" id="in-person">
+                    <input type="radio" name="type" id="in-person" value="in-person">
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M5.833 1.834A.833.833 0 0 0 5 2.667v11.5h7v-11.5a.833.833 0 0 0-.833-.833zM13 5.5V2.667A1.833 1.833 0 0 0 11.167.833H5.833A1.833 1.833 0 0 0 4 2.667V7.5h-.833a1.833 1.833 0 0 0-1.834 1.834v4a1.834 1.834 0 0 0 1.834 1.833h10.666a1.833 1.833 0 0 0 1.834-1.833v-6A1.833 1.833 0 0 0 13.833 5.5zm0 1v7.667h.833a.834.834 0 0 0 .834-.833v-6a.833.833 0 0 0-.834-.834zm-9 2h-.833a.833.833 0 0 0-.834.834v4a.833.833 0 0 0 .834.833H4zM6.667 4a.5.5 0 0 1 .5-.5h2.666a.5.5 0 1 1 0 1H7.167a.5.5 0 0 1-.5-.5m0 2.667a.5.5 0 0 1 .5-.5h2.666a.5.5 0 1 1 0 1H7.167a.5.5 0 0 1-.5-.5m0 2.667a.5.5 0 0 1 .5-.5h2.666a.5.5 0 1 1 0 1H7.167a.5.5 0 0 1-.5-.5m0 2.666a.5.5 0 0 1 .5-.5h2.666a.5.5 0 1 1 0 1H7.167a.5.5 0 0 1-.5-.5"
@@ -73,7 +75,7 @@
                   </div>
 
                   <div class="radio-inner flex">
-                    <input type="radio" name="type" id="online">
+                    <input type="radio" name="type" id="online" value="online">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M2.667 4.5a.833.833 0 0 0-.834.833v5.334c0 .46.373.833.834.833h6.666c.46 0 .834-.373.834-.833V5.333a.833.833 0 0 0-.834-.833zm8.5 1.63v-.797A1.834 1.834 0 0 0 9.333 3.5H2.667C1.654 3.5.833 4.32.833 5.333v5.334c0 1.012.821 1.833 1.834 1.833h6.666c1.013 0 1.834-.82 1.834-1.833V9.6l2.705 1.803a.833.833 0 0 0 1.295-.693V5.247a.833.833 0 0 0-1.254-.72zm0 1.157V8.4l3 2V5.537z"
@@ -98,6 +100,262 @@
               </div>
             </div>
           </fieldset>
+
+          <fieldset id="personalization">
+            <div class="legend-wrapper">
+              <img src="assets/icons/paintbrush-vertical.svg" alt="calendar icon">
+              <legend>Personalization</legend>
+            </div>
+
+            <div class="fields-container grid">
+              <div class="input-wrapper">
+                <label for="main-color">Main color</label>
+
+                <div id="main-color" class="radio-wrapper flex">
+
+                  <div class="radio-inner" style="--inner-color: var(--brand-light);">
+                    <input name="main-color" id="navy-blue" value="light-blue" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--accent-navy);">
+                    <input name="main-color" id="navy-blue" value="navy-blue" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--accent-purple);">
+                    <input name="main-color" id="purple" value="purple" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--accent-fuschia);">
+                    <input name="main-color" id="fuchsia" value="fuchsia" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--feedback-danger);">
+                    <input name="main-color" id="dark-orange" value="dark-orange" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--accent-orange);">
+                    <input name="main-color" id="orange" value="orange" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--accent-yellow);">
+                    <input name="main-color" id="yellow" value="yellow" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--accent-lime);">
+                    <input name="main-color" id="lime" value="lime" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--accent-green);">
+                    <input name="main-color" id="green" value="green" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                  <div class="radio-inner" style="--inner-color: var(--accent-cyan);">
+                    <input name="main-color" id="cyan" value="cyan" type="radio">
+                    <div class="radio-inner-color"></div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="theme">Event theme</label>
+
+                <figcaption id="theme" class="radio-wrapper grid">
+                  <figure class="card">
+                    <img src="assets/images/birthday.jpg" alt="cake">
+                    <span>Birthday</span>
+                    <input id="birthday" value="birthday" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/childlike.jpg" alt="cake">
+                    <span>Childlike</span>
+                    <input id="childlike" value="childlike" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/graduation.png" alt="cake">
+                    <span>Graduation</span>
+                    <input id="graduation" value="graduation" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/marriage.jpg" alt="cake">
+                    <span>Marriage</span>
+                    <input id="marriage" value="marriage" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/baby-shower.jpg" alt="cake">
+                    <span>Baby shower</span>
+                    <input id="baby-shower" value="baby-shower" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/bridal-shower.png" alt="cake">
+                    <span>Bridal shower</span>
+                    <input id="bridal-shower" value="bridal-shower" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/carnaval.png" alt="cake">
+                    <span>Carnaval</span>
+                    <input id="carnaval" value="carnaval" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/easter.png" alt="cake">
+                    <span>Easter</span>
+                    <input id="easter" value="easter" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/saint-john.png" alt="cake">
+                    <span>Saint John</span>
+                    <input id="saint-john" value="saint-john" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/halloween.png" alt="cake">
+                    <span>Halloween</span>
+                    <input id="halloween" value="halloween" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/christmas.png" alt="cake">
+                    <span>Christmas</span>
+                    <input id="christmas" value="christmas" name="theme" type="radio">
+                  </figure>
+
+                  <figure class="card">
+                    <img src="assets/images/other.jpg" alt="cake">
+                    <span>Other</span>
+                    <input id="other" value="other" name="theme" type="radio">
+                  </figure>
+                </figcaption>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="style">Style</label>
+
+                <div id="toggle-container" class="flex">
+                  <div class="input-toggle-wrapper">
+                    <div class="toggle-circle"></div>
+                    <input id="style" name="styles" type="checkbox">
+                  </div>
+                  <span>Dark</span>
+                </div>
+
+              </div>
+
+              <div class="input-wrapper">
+                <label for="cover-photo">Cover photo</label>
+
+                <div class="file-wrapper flex">
+                  <div class="file-inner flex">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.646 1.646a.5.5 0 0 1 .708 0l3.333 3.334a.5.5 0 0 1-.707.707L8.5 3.207V10a.5.5 0 0 1-1 0V3.207l-2.48 2.48a.5.5 0 0 1-.707-.707zM2 9.5a.5.5 0 0 1 .5.5v2.667a.833.833 0 0 0 .833.833h9.334a.833.833 0 0 0 .833-.833V10a.5.5 0 0 1 1 0v2.667a1.833 1.833 0 0 1-1.833 1.833H3.333A1.833 1.833 0 0 1 1.5 12.667V10a.5.5 0 0 1 .5-.5"
+                        fill="#59B2FF" />
+                    </svg>
+                    <span>Select</span>
+                    <input id="cover-photo" name="cover-photo" type="file">
+                  </div>
+                  <small>No files selected</small>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset id="contact">
+            <div class="legend-wrapper">
+              <img src="assets/icons/contact.svg" alt="calendar icon">
+              <legend>Contact Details</legend>
+            </div>
+
+            <div class="fields-container grid grid-col-2">
+              <div class="input-wrapper">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Full name" required>
+                <div class="error">
+                  <img src="assets/icons/circle-alert.svg" alt="">
+                  <small>Required field</small>
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="mail">E-mail</label>
+                <input id="mail" name="mail" type="email" placeholder="exemple@mail.com">
+              </div>
+
+              <div class="input-wrapper">
+                <label for="phone">Phone</label>
+                <input id="mail" name="mail" type="tel" placeholder="(99) 99999-9999">
+              </div>
+            </div>
+          </fieldset>
+
+          <footer class="grid">
+            <div class="items-container">
+              
+              <div class="input-wrapper">
+                <div class="checkbox-wrapper">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.687 3.646a.5.5 0 0 1 0 .708l-7.333 7.333a.5.5 0 0 1-.707 0L2.313 8.354a.5.5 0 1 1 .707-.708L6 10.626l6.98-6.98a.5.5 0 0 1 .707 0"
+                      fill="#59B2FF" />
+                  </svg>
+                  <input id="policy" name="policy" type="checkbox">
+                </div>
+                <p>
+                  I have read and agree to the <strong>Terms and Conditions</strong> and <strong>Privacy Policy</strong>
+                </p>
+              </div>
+
+              <div class="input-wrapper">
+                <div class="checkbox-wrapper">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.687 3.646a.5.5 0 0 1 0 .708l-7.333 7.333a.5.5 0 0 1-.707 0L2.313 8.354a.5.5 0 1 1 .707-.708L6 10.626l6.98-6.98a.5.5 0 0 1 .707 0"
+                      fill="#59B2FF" />
+                  </svg>
+                  <input id="policy" name="policy" type="checkbox">
+                </div>
+                <p>
+                  I agree to receive updates and promotions by email
+                </p>
+              </div>
+
+              <div class="input-wrapper">
+                <div class="checkbox-wrapper">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.687 3.646a.5.5 0 0 1 0 .708l-7.333 7.333a.5.5 0 0 1-.707 0L2.313 8.354a.5.5 0 1 1 .707-.708L6 10.626l6.98-6.98a.5.5 0 0 1 .707 0"
+                      fill="#59B2FF" />
+                  </svg>
+                  <input id="policy" name="policy" type="checkbox">
+                </div>
+                <p>
+                  I agree to receive updates and promotions via SMS
+                </p>
+              </div>
+
+            </div>
+
+            <button>
+              <img src="assets/icons/ticket.svg" alt="">
+              <span>Generate invitation</span>
+            </button>
+          </footer>
         </form>
       </div>
     </main>

@@ -1,9 +1,16 @@
 form {
   margin-top: 2.5rem;
+  gap: 3rem;
 }
 
 fieldset {
   border: none;
+}
+
+form > footer {
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--input-stroke);
+  gap: 3rem;
 }
 
 .legend-wrapper {
@@ -13,10 +20,6 @@ fieldset {
 
   font: var(--text-header-sm);
   color: var(--text-heading-color);
-}
-
-fieldset + fieldset {
-  margin-top: 3rem;
 }
 
 label {
@@ -30,8 +33,7 @@ label {
   margin-top: 1.5rem;
 }
 
-#about > .fields-container {
-  grid-template-columns: 1fr 1fr;
+#about>.fields-container {
   grid-template-rows: repeat(4, auto);
   grid-template-areas:
     "A A"
@@ -63,5 +65,57 @@ label {
 
   &>:nth-child(6) {
     grid-area: F;
+  }
+}
+
+#personalization>.fields-container {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "A A A"
+    "B B B"
+    "C D D";
+
+  gap: 1.75rem 1rem;
+
+  &>:nth-child(1) {
+    grid-area: A;
+  }
+
+  &>:nth-child(2) {
+    grid-area: B;
+  }
+
+  &>:nth-child(3) {
+    grid-area: C;
+  }
+
+  &>:nth-child(4) {
+    grid-area: D;
+  }
+
+  &>:nth-child(5) {
+    grid-area: E;
+  }
+}
+
+#contact>.fields-container {
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "A A"
+    "B C";
+
+  gap: 1rem;
+
+  &>:nth-child(1) {
+    grid-area: A;
+  }
+
+  &>:nth-child(2) {
+    grid-area: B;
+  }
+
+  &>:nth-child(3) {
+    grid-area: C;
   }
 }

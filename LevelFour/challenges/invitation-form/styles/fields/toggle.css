@@ -1,0 +1,50 @@
+#toggle-container {
+  gap: .75rem;
+  align-items: center;
+  height: 3rem;
+
+  & span {
+    font: var(--text-sm);
+    color: var(--text-heading-color);
+  }
+}
+
+.input-toggle-wrapper {
+  width: 4rem;
+  height: 2rem;
+  background-color: var(--input-base);
+  outline: 1px solid var(--input-stroke);
+  border-radius: 999px;
+
+  position: relative;
+  & input,
+  & input:focus,
+  & input:hover {
+    all: unset;
+    position: absolute;
+    inset: 0;
+  }
+
+  & .toggle-circle {
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    
+    background-color: var(--input-stroke);
+    border-radius: 999px;
+
+    top: .25rem;
+    left: .25rem;
+    right: auto;
+  }
+
+  &:has(:checked) {
+    background-color: var(--brand-light);
+
+    & .toggle-circle {
+      background-color: var(--text-heading-color);
+      left: auto;
+      right: .25rem;
+    }
+  }
+}
