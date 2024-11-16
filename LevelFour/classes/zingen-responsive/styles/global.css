@@ -30,10 +30,7 @@
   --text-color-secondary: #a1a1aa;
   --text-color-primary: #f4f4f5;
 
-  --gradient-metal-gradient:
-    linear-gradient(90deg var(--surface-color) 0%,
-      var(--text-color-secondary) 50%,
-      var(--surface-color) 100%);
+  --gradient-metal-gradient: radial-gradient(var(--text-color-secondary), var(--surface-color) 70%);
 
   --ff-sans: 'Inter', system-ui, sans-serif;
   --fw-base: 400;
@@ -59,10 +56,15 @@ html {
   font-size: var(--fs-base);
   line-height: 1.6;
   color: var(--text-color-primary);
+
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 h1,
