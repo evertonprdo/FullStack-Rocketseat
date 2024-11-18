@@ -1,0 +1,42 @@
+#hero {
+  height: 29rem;
+}
+
+#hero .container {
+  margin-inline: 1.25rem;
+}
+
+#hero nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 1.25rem;
+
+  & img {
+    height: 3rem;
+  }
+}
+
+@media (width >=80rem) {
+  #hero {
+    height: 59.25rem;
+  }
+
+  #hero nav {
+    max-width: 70rem;
+    margin-inline: auto;
+
+    margin-top: 3.5rem;
+
+    & img {
+      width: 14.375rem;
+      height: auto;
+    }
+  }
+
+  #hero header {
+    max-width: 41rem;
+    margin-inline: auto;
+  }
+}

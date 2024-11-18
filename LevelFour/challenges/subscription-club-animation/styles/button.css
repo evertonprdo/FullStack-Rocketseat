@@ -1,0 +1,99 @@
+:root {
+  --btn-transition-config: 300ms ease-out;
+  --btn-scale-transition: scale var(--btn-transition-config);
+}
+
+.btn {
+  position: relative;
+  padding: .75rem 1.25rem;
+  border-radius: .5rem;
+  overflow: hidden;
+
+  font: var(--text-button);
+  color: var(--color-text-title);
+
+  &::after {
+    content: attr(aria-label);
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    inset: -50% 0;
+
+    scale: 0;
+    transition: var(--btn-scale-transition);
+    border-radius: 50%;
+  }
+
+  &:hover:before {
+    scale: 1.125;
+  }
+}
+
+.btn-primary {
+  background-color: var(--color-pink-dark);
+
+  &::before {
+    background-color: var(--color-pink-base);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--color-blue-dark);
+
+  &::before {
+    background-color: var(--color-blue-base);
+  }
+}
+
+.link {
+  font: var(--text-link);
+  color: var(--color-text-body);
+
+  &:hover {
+    color: var(--color-blue-light);
+  }
+}
+
+.btn-social {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 2.5rem;
+  width: 2.5rem;
+
+  &>svg {
+    fill: var(--color-blue-light);
+    transition: fill var(--btn-transition-config);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    inset: 0;
+    scale: 0;
+    transition: var(--btn-scale-transition);
+    border-radius: 50%;
+
+    background-color: var(--color-shape-stroke);
+    z-index: -1;
+  }
+
+  &:hover {
+    &::before {
+      scale: 1;
+    }
+
+    &>svg {
+      fill: var(--color-text-body);
+    }
+  }
+}
