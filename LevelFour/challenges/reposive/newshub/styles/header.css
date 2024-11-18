@@ -1,0 +1,48 @@
+#primary {
+  padding-block: 20px;
+
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* nesting css */
+  & div:nth-child(2) {
+    margin-inline: auto;
+  }
+
+  & div:nth-child(3) {
+    justify-self: end;
+  }
+}
+
+#secondary {
+  padding-block: 14px;
+  border: solid 1px var(--stroke-color);
+  border-inline: none;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+@media (width < 80em) {
+  #primary {
+    padding-block: 16px;
+
+    & div > strong {
+      display: none;
+    }
+
+    & div:nth-child(2) > img {
+      width: 100px;
+    }
+  }
+
+  #secondary {
+    overflow-x: auto;
+
+    & a {
+      text-wrap: nowrap;
+    }
+  }
+}

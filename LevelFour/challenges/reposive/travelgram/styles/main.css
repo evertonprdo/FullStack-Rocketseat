@@ -1,0 +1,28 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-block: 24px;
+}
+
+main img {
+  width: 286px;
+  height: 286px;
+  object-fit: cover;
+}
+
+@media (width <80em) {
+  main {
+    gap: 16px;
+    padding-block: 16px;
+  }
+
+  main img {
+    width: 100%;
+    height: auto;
+  }
+
+  main.container {
+    padding-inline: 16px;
+  }
+}

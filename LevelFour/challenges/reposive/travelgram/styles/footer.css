@@ -1,0 +1,23 @@
+footer {
+  display: flex;
+  gap: 24px;
+  padding-block: 24px;
+
+  font: 14px/150% var(--font-family);
+}
+
+footer span:nth-child(1) {
+  margin-right: auto;
+}
+
+@media (width < 80em) {
+  footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    & span:nth-child(1) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
