@@ -1,28 +1,35 @@
 *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font: inherit;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
   --ff-base: "Raleway", sans-serif;
 
-  --text-title-lg: 700 3rem var(--ff-base);
+  --text-title-lg: 700 1.75rem var(--ff-base);
   --text-title-md: 700 2.5rem var(--ff-base);
   --text-title-sm: 700 2rem var(--ff-base);
   --text-title-sx: 700 1rem var(--ff-base);
 
-  --text-subtitle: 500 2rem var(--ff-base);
+  --text-subtitle: 500 1rem/140% var(--ff-base);
 
-  --text-regular-lg: 400 1.25rem var(--ff-base);
-  --text-regular-md: 400 1rem var(--ff-base);
-  --text-regular-sm: 400 .875rem var(--ff-base);
-  --text-regular-xs: 400 .75rem var(--ff-base);
+  --text-regular-lg: 400 .875rem/140% var(--ff-base);
+  --text-regular-md: 400 1rem/140% var(--ff-base);
+  --text-regular-sm: 400 .875rem/140% var(--ff-base);
+  --text-regular-xs: 400 .75rem/140% var(--ff-base);
 
-  --text-bold-lg: 700 1.25rem var(--ff-base);
-  --text-bold-md: 700 1rem var(--ff-base);
-  --text-bold-sm: 700 .875rem var(--ff-base);
-  --text-bold-xs: 700 .75rem var(--ff-base);
+  --text-bold-lg: 700 .875rem/140% var(--ff-base);
+  --text-bold-md: 700 1rem/140% var(--ff-base);
+  --text-bold-sm: 700 .875rem/140% var(--ff-base);
+  --text-bold-xs: 700 .75rem/140% var(--ff-base);
 
   --text-button: 700 .875rem var(--ff-base);
   --text-link: 500 .875rem var(--ff-base);
@@ -52,6 +59,7 @@ html {
   background-color: var(--color-shape-background);
   font: var(--text-regular-md);
   color: var(--color-text-body);
+  overflow-x: hidden;
 }
 
 .text-tag {
@@ -81,6 +89,15 @@ img {
 }
 
 @media (width >= 80em) {
+  :root {
+    --text-title-lg: 700 3rem var(--ff-base);
+
+    --text-subtitle: 500 2rem/200% var(--ff-base);
+
+    --text-regular-lg: 400 1.25rem var(--ff-base);
+    --text-bold-lg: 700 1.25rem var(--ff-base);
+  }
+
   .desktop-only {
     display: initial;
   }
