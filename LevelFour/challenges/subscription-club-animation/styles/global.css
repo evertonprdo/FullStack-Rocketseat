@@ -16,13 +16,13 @@
 
   --text-title-lg: 700 1.75rem var(--ff-base);
   --text-title-md: 700 2.5rem var(--ff-base);
-  --text-title-sm: 700 2rem var(--ff-base);
+  --text-title-sm: 700 1.5rem var(--ff-base);
   --text-title-sx: 700 1rem var(--ff-base);
 
   --text-subtitle: 500 1rem/140% var(--ff-base);
 
   --text-regular-lg: 400 .875rem/140% var(--ff-base);
-  --text-regular-md: 400 1rem/140% var(--ff-base);
+  --text-regular-md: 400 .875rem/140% var(--ff-base);
   --text-regular-sm: 400 .875rem/140% var(--ff-base);
   --text-regular-xs: 400 .75rem/140% var(--ff-base);
 
@@ -53,6 +53,8 @@
   --color-pink-dark: #7d298a;
   --color-pink-low: #3f0f41;
   --color-pink-light: #c59dd2;
+
+  --anim-bounce-bezier: cubic-bezier(.47,1.64,.41,.8);
 }
 
 html {
@@ -91,10 +93,13 @@ img {
 @media (width >= 80em) {
   :root {
     --text-title-lg: 700 3rem var(--ff-base);
+    --text-title-sm: 700 2rem var(--ff-base);
 
     --text-subtitle: 500 2rem/200% var(--ff-base);
 
     --text-regular-lg: 400 1.25rem var(--ff-base);
+    --text-regular-md: 400 1rem/140% var(--ff-base);
+
     --text-bold-lg: 700 1.25rem var(--ff-base);
   }
 

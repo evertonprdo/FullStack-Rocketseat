@@ -19,8 +19,8 @@
 }
 
 #hero .container {
-  max-width: 23.5rem;
-  padding-inline: 1.25rem;
+  max-width: 375px;
+  padding-inline: 20px;
   margin-inline: auto;
 }
 
@@ -108,7 +108,7 @@
   inset: 0;
   z-index: -2;
   
-  max-width: 23.4375rem;
+  max-width: 375px;
   margin-inline: auto;
 
   & .circle {
@@ -202,7 +202,7 @@
 
   #hero .subtitle {
     --anim-duration: 500ms;
-    --anim-bezier: cubic-bezier(.47,1.64,.41,.8);
+    --anim-bezier: var(--anim-bounce-bezier);
 
     max-width: 75rem;
     margin-inline: auto;
@@ -268,7 +268,7 @@
 
     & img:nth-child(1) {
       top: 8px;
-      right: 560px;
+      left: 350px;
 
       transform: rotate(20deg);
     }
@@ -277,7 +277,7 @@
       width: 5rem;
 
       top: 249px;
-      left: 126px;
+      left: 50px;
 
       transform: rotate(99.5deg);
     }
