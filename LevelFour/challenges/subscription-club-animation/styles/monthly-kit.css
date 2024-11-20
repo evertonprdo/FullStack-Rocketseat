@@ -3,6 +3,9 @@
 }
 
 #monthly-kit header {
+  position: relative;
+  z-index: 10;
+
   text-align: center;
 
   & .title {
@@ -146,6 +149,22 @@
       }
     }
   }
+
+  & .circle {
+    position: absolute;
+
+    top: 3px;
+    left: 39px;
+
+    width: 298px;
+    height: 298px;
+    border-radius: 50%;
+
+    background-color: var(--color-pink-low);
+    filter: blur(103.226px);
+    z-index: -1;
+    pointer-events: none
+  }
 }
 
 @media (width >=80em) {
@@ -164,7 +183,7 @@
   }
 
   #monthly-kit .centralizer {
-    margin-block: 4rem 5.5rem;
+    margin-block: 5.5rem 4rem;
     height: 57.5rem;
   }
 
@@ -296,6 +315,16 @@
           transform: unset;
         }
       }
+    }
+
+    & .circle { 
+      top: -22px;
+      left: 255px;
+  
+      width: 930px;
+      height: 930px;
+  
+      filter: blur(300px);
     }
   }
 }

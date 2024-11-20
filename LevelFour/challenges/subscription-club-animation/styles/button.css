@@ -52,10 +52,11 @@
 
 .link {
   font: var(--text-link);
-  color: var(--color-text-body);
-
+  color: var(--color-blue-light);
+  transition: color 300ms linear;
+  
   &:hover {
-    color: var(--color-blue-light);
+    color: var(--color-text-body);
   }
 }
 
@@ -72,6 +73,7 @@
   &>svg {
     fill: var(--color-blue-light);
     transition: fill var(--btn-transition-config);
+    z-index: 1;
   }
 
   &::before {
@@ -84,7 +86,7 @@
     border-radius: 50%;
 
     background-color: var(--color-shape-stroke);
-    z-index: -1;
+    z-index: 0;
   }
 
   &:hover {

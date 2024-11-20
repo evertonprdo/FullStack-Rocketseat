@@ -33,7 +33,7 @@
 
   --text-button: 700 .875rem var(--ff-base);
   --text-link: 500 .875rem var(--ff-base);
-  --text-tag: 700 .875rem var(--ff-base);
+  --text-tag: 700 .625rem var(--ff-base);
 
   --color-shape-background: #00050a;
   --color-shape-base: #000f1f;
@@ -80,6 +80,10 @@ img {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+ul[role="list"] {
+  list-style: none;
 }
 
 .desktop-only {

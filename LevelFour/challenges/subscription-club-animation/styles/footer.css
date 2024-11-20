@@ -1,0 +1,90 @@
+footer {
+  background-image: url('../assets/images/book-trace-background.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+footer .footer-bg {
+  display: flex;
+  flex-direction: column;
+
+  padding-block: 98px 38px;
+  padding-inline: 32px;
+
+  gap: 40px;
+
+  & .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & img {
+      width: 158px;
+      margin-inline: auto;
+    }
+
+    & .divider {
+      margin-block: 12px;
+      width: 100%;
+      border: 1px solid  var(--color-shape-stroke);
+    }
+
+    & .social {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  & .links {
+    display: flex;
+    gap: 24px;
+
+    & .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      & h4 {
+        font: var(--text-title-sx);
+        padding-bottom: 4px;
+      }
+
+      & a {
+        font: var(--text-link);
+      }
+    }
+  }
+}
+
+@media (width >= 80em) {
+  footer .footer-bg {
+    max-width: 1440px;
+    margin-inline: auto;
+
+    padding-block: 170px 114px;
+    padding-inline: 160px;
+
+    flex-direction: row;
+    justify-content: space-between;
+  
+    & .brand {
+      gap: 12px;
+  
+      & img {
+        width: 264px;
+      }
+    }
+  
+    & .links {
+      gap: 56px;
+      padding-top: 8px;
+  
+      & .content-wrapper {
+        min-width: 128px;
+      }
+    }
+  }
+  
+}
