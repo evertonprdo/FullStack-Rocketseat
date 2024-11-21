@@ -1,0 +1,72 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --theme-content-primary: #ffffff;
+  --theme-content-secondary: #c7c9cc;
+  --theme-content-tertiary: #d9d9d9;
+  --theme-content-brand: #c58de7;
+  --theme-content-inverse: #030203;
+
+  --theme-bg-primary: #020202;
+  --theme-bg-secondary: #111012;
+  --theme-bg-tertiary: #24222e;
+  --theme-bg-brand: #c58de7;
+  --theme-bg-gray: #3d3d3d;
+
+  --theme-accent-pink: #d586e0;
+  --theme-accent-blue: #91a1fa;
+  --theme-accent-green: #77c0af;
+  --theme-accent-lime: #d1dc97;
+  --theme-accent-red: #e9a9b3;
+
+  --theme-gradient-border: linear-gradient(91.26deg,
+      var(--theme-accent-green) 0%,
+      var(--theme-accent-lime) 14.84%,
+      var(--theme-accent-red) 32.15%,
+      var(--theme-accent-pink) 65.79%,
+      var(--theme-accent-blue) 84.58%);
+
+  --theme-gradient-bg: linear-gradient(91.26deg,
+      var(--theme-accent-pink) 0%,
+      var(--theme-accent-blue) 98.93%);
+
+  --theme-gradient-content: linear-gradient(90deg,
+      var(--theme-content-secondary) 0%,
+      var(--theme-bg-gray) 100%);
+
+  --ff-display: "Sora", serif;
+  --ff-base: "Roboto Flex", sans-serif;
+
+  --text-display-lg: 800 4.5rem/1.3 var(--ff-display);
+  --text-display-md: 800 2.5rem/1.3 var(--ff-display);
+  --text-display-small: 700 2rem/1.3 var(--ff-display);
+
+  --text-overline: 700 1rem/1.5 "Roboto Mono", serif;
+
+  --text-lg: 500 1rem/1.5 var(--ff-base);
+  --text-md: 500 .875rem/1.5 var(--ff-base);
+  --text-lg: 500 .75rem/1.5 var(--ff-base);
+
+  --text-label-md: 700 1.25rem/1.5 var(--ff-base);
+  --text-lg: 700 1rem/1.5 var(--ff-base);
+}
+
+html {
+  background-color: var(--theme-bg-primary);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
