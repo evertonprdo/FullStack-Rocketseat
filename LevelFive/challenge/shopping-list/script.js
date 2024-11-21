@@ -1,47 +1,47 @@
-/* 
-  #Execution flow
-
-    user type an value;
-    submit triggered;
-      eventListener('submit')
-
-    item added to list;
-      add new item()
-        create item list()
-    
-    item removed to list;
-      remove item()
-    
-    alert is shown;
-      shown alert()
-*/
-
 const form = document.querySelector('form')
 const input = document.querySelector('#ipt-add-item')
 
 const list = document.querySelector('ul')
+const alertBox = document.querySelector('.alert')
 
+// function addNewItem()
 form.onsubmit = (event) => {
   event.preventDefault()
 
+  if(!input.value.trim()) {
+    return window.alert('Please, type some value')
+  }
+
  const newItem = createItemList(input.value)
- addNewItem(newItem)
+ list.appendChild(newItem)
+
+ input.value = ''
 }
 
-function addNewItem(item) {
-  list.appendChild(item)
-}
+// function removeItem()
+list.addEventListener('click', (event) => {
+  if(event.target.tagName === 'BUTTON') {
+    list.removeChild(event.target.parentNode)
+
+    alertBox.classList.add('shown-alert')
+  }
+})
+
+// function hideAlert()
+alertBox.addEventListener('click', (event) => {
+  console.log(event.target)
+
+  if(event.target.tagName === 'BUTTON') {
+    alertBox.classList.remove('shown-alert')
+  }
+})
 
 function createItemList(value) {
   const li = document.createElement('li')
   const span = document.createElement('span')
   span.innerHTML = value.trim()
   
-  li.append(
-    createCheckbox(),
-    span,
-    createTrashIconBtn()
-  )
+  li.append(createCheckbox(), span, createTrashIconBtn())
 
   return li
 }
@@ -58,5 +58,6 @@ function createTrashIconBtn() {
 
   btnIcon.innerHTML = svgTrashIcon
   btnIcon.classList.add('btn-icon')
+
   return btnIcon
 }

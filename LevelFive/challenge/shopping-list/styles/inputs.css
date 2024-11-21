@@ -28,9 +28,11 @@ button {
   width: 32px;
 
   & > svg {
+    pointer-events: none;
     height: 16px;
     width: 16px;
     &>path {
+      pointer-events: none;
       stroke: #6B6671;
     }
   }

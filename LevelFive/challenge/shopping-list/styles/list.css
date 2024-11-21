@@ -52,6 +52,7 @@ main ul {
   }
 
   & svg {
+    pointer-events: none;
     fill: var(--always-white);
   }
 
@@ -60,7 +61,7 @@ main ul {
   }
 }
 
-.show-alert {
+.shown-alert {
   display: flex;
 }
 
