@@ -35,7 +35,8 @@ body {
 }
 
 .logo {
-  margin: 3rem 0 2rem;
+  margin-block: 3rem 0;
+  margin-inline: 2rem;
 }
 
 main section {
