@@ -1,0 +1,81 @@
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  border-radius: 8px;
+
+  font: var(--text-label);
+  color: var(--always-white);
+  background-color: var(--brand);
+
+  text-align: center;
+  transition: background-color 300ms ease-out;
+
+  &:hover {
+    background-color: var(--brand-hover);
+  }
+}
+
+.btn-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 32px;
+  width: 32px;
+
+  & > svg {
+    pointer-events: none;
+    height: 16px;
+    width: 16px;
+    &>path {
+      pointer-events: none;
+      stroke: #6B6671;
+    }
+  }
+}
+
+input {
+  all: unset;
+}
+
+input[type="text"] {
+  font: 400 1rem/1.4 var(--font-family);
+  color: var(--content-primary);
+  background-color: var(--bg-secondary);
+
+  padding: 12px 18px;
+  border: 2px solid var(--border-primary);
+  border-radius: 12px;
+
+  &:hover {
+    border-color: var(--border-hover);
+  }
+
+  &:focus {
+    border-color: var(--brand);
+  }
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+
+  width: 16px;
+  height: 16px;
+
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+
+  &:hover {
+    border-color: var(--border-hover);
+  }
+
+  &:checked {   
+    background: var(--brand) url('../assets/icons/check.svg') no-repeat center / contain;
+    border-color: var(--brand);
+  }
+}

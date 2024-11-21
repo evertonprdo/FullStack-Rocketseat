@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List</title>
+
+  <link rel="stylesheet" href="styles/index.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="container">
+    <img src="assets/logo.svg" alt="">
+
+    <nav class="flex flex-column">
+      <a class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+          <path
+            d="M224 128a8 8 0 0 1-8 8H59.31l58.35 58.34a8 8 0 0 1-11.32 11.32l-72-72a8 8 0 0 1 0-11.32l72-72a8 8 0 0 1 11.32 11.32L59.31 120H216a8 8 0 0 1 8 8" />
+        </svg>
+        Back
+      </a>
+
+      <h1>
+        Shopping of the week
+      </h1>
+    </nav>
+  </header>
+
+  <main class="container">
+    <form class="flex">
+      <input name="new-item" id="ipt-add-item" type="text" placeholder="Add a new item">
+      <button class="btn-primary">Add item</button>
+    </form>
+
+    <ul role="list" class="flex flex-column"></ul>
+
+    <div class="alert">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#a)">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M9.44.672c-.676.06-1.09.12-1.557.228a9.35 9.35 0 0 0-5.607 3.85A9.25 9.25 0 0 0 .66 10c0 1.969.596 3.826 1.746 5.44a9.38 9.38 0 0 0 5.503 3.666 9.5 9.5 0 0 0 4.61-.109A9.36 9.36 0 0 0 18.7 13.4c.676-1.7.822-3.672.407-5.49A9.37 9.37 0 0 0 15.8 2.679a9.3 9.3 0 0 0-4.82-1.97A17 17 0 0 0 9.44.672m.404 4.63a.76.76 0 0 0-.583.62c-.026.161-.028 4.334-.002 4.514a.75.75 0 0 0 .417.568c.122.06.149.066.324.066s.202-.005.324-.066a.75.75 0 0 0 .417-.568c.026-.18.024-4.353-.002-4.513a.75.75 0 0 0-.599-.623.6.6 0 0 0-.296.001m.016 7.258a1.06 1.06 0 0 0-.663.355 1.07 1.07 0 0 0-.246.983c.062.265.262.53.51.677.132.077.383.145.539.145s.407-.068.539-.146c.248-.146.448-.411.51-.676a1.07 1.07 0 0 0-.246-.982 1.08 1.08 0 0 0-.943-.356" />
+        </g>
+        <defs>
+          <clipPath id="a">
+            <path fill="#fff" d="M0 0h20v20H0z" />
+          </clipPath>
+        </defs>
+      </svg>
+
+      <span>
+        The item has been removed from the list
+      </span>
+
+      <button>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.47 4.47a.75.75 0 0 1 1.06 0L10 8.94l4.47-4.47a.75.75 0 1 1 1.06 1.06L11.06 10l4.47 4.47a.75.75 0 1 1-1.06 1.06L10 11.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06L8.94 10 4.47 5.53a.75.75 0 0 1 0-1.06" />
+        </svg>
+      </button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

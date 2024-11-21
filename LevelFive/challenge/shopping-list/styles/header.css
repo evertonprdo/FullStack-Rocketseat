@@ -1,0 +1,39 @@
+header {
+  margin-top: 24px;
+}
+
+header > img {
+  margin-bottom: 62px;
+  width: 156px;
+  margin-inline: auto;
+}
+
+header > nav {
+  gap: 16px;
+
+  & a {
+    --fill-color: var(--brand);
+
+    font: var(--text-link);
+    color: var(--fill-color);
+    fill: var(--fill-color);
+
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+
+    &> svg {
+      height: 16px;
+      width: 16px;
+    }
+
+    &:hover {
+      --fill-color: var(--brand-hover);
+    }
+  }
+
+  & h1 {
+    font: var(--text-title);
+    color: var(--content-primary);
+  }
+}
