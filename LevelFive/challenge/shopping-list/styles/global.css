@@ -1,0 +1,74 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #F4F5FB;
+  --bg-secondary: #FFFFFF;
+
+  --brand: #CA3884;
+  --brand-hover: #A52C6B;
+  --danger: #C93847;
+
+  --content-primary: #080B12;
+  --content-secondary: #374151;
+  --content-tertiary: #9CA3AF;
+  --always-white: #FFFFFF;
+
+  --border-primary: #D1D5DB;
+  --border-hover: #B9C2D0;
+
+  --font-family: "Inter", sans-serif;
+
+  --text-title: 700 1.5rem/1.33 var(--font-family);
+  --text-label: 600 1rem/1.25 var(--font-family);
+  --text: 500 1rem/1.25 var(--font-family);
+  --text-link: 500 0.875rem/1.15 var(--font-family);
+}
+
+html {
+  font: var(--text);
+  color: var(--content-secondary);
+  background-color: var(--bg-primary);
+}
+
+h1 {
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+ul[role="list"] {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.container {
+  max-width: 45rem;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
