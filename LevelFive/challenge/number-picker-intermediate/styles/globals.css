@@ -56,6 +56,8 @@
 
   --text-label-md: 700 1.25rem/1.5 var(--ff-base);
   --text-lg: 700 1rem/1.5 var(--ff-base);
+
+  --anim-bezier-bounce: cubic-bezier(.47,1.64,.41,.8);
 }
 
 html {
