@@ -1,0 +1,115 @@
+.btn-gradient {
+  all: unset;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+
+  width: 100%;
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: var(--theme-bg-tertiary);
+
+  font: var(--text-label-md);
+  color: var(--theme-content-primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    top: 50%;
+    right: -1%;
+    left: -1%;
+
+    aspect-ratio: 1 / 1;
+
+    opacity: 0;
+    border-radius: 50%;
+    background: var(--theme-gradient-border);
+
+    transform: translateY(-50%);
+    transition: opacity 300ms ease-out;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    
+    inset: 2px;
+    z-index: 1;
+
+    transition: background-color 300ms ease-out;
+    border-radius: inherit;
+    background-color: var(--theme-bg-tertiary);
+  }
+
+  &:hover::before {
+    opacity: 1;
+    animation: gradient-spin 2s linear infinite;
+  }
+
+  &:hover::after {
+    background-color: var(--theme-bg-secondary);
+  }
+
+  &:hover img[src*="curved"] {
+    animation: icon-spin 1.5s linear infinite;
+  }
+
+  &:hover img[src*="arrow-right"] {
+    animation: bounce-x 550ms linear infinite alternate
+  }
+}
+
+& .btn-gradient > .spin-icon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 24px;
+  width: 24px;
+
+  & > img {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@keyframes gradient-spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-x {
+  to {
+    transform: translateX(10px);
+  }
+}
