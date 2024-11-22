@@ -1,8 +1,8 @@
 input.toggle {
   /* Toggle config bellow */
-  --lc-anim-config: 300ms ease-out;
-  
-  --lc-toggle-width: 33vw;
+  --lc-anim-config: 500ms var(--anim-bezier-bounce);
+
+  --lc-toggle-width: 30px;
   --lc-toggle-aspect-ratio: 3 / 2;
   --lc-toggle-circle-percent: .7;
 
@@ -40,13 +40,13 @@ input.toggle {
 
   &::before {
     content: '';
-    
+
     position: absolute;
     inset: 0;
-    
+
     border-radius: inherit;
     background: var(--theme-gradient-bg);
-    
+
     opacity: 0;
     transition: opacity var(--lc-anim-config);
   }
@@ -57,5 +57,64 @@ input.toggle {
 
   &:checked::after {
     margin-left: calc(var(--lc-toggle-width) - var(--lc-toggle-height));
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  & label {
+    font: var(--text-label-md);
+    color: var(--theme-content-secondary);
+  }
+
+  & .ipt-gradient-border {
+    position: relative;
+
+    background-image: none;
+    border-radius: 8px;
+
+    &>input {
+      all: unset;
+      background-color: var(--theme-bg-secondary);
+
+      padding: 4px 8px;
+      border-radius: inherit;
+
+      font: var(--text-display-sm);
+      color: var(--theme-content-primary);
+      text-align: center;
+    }
+  }
+
+  &:hover {
+    & label {
+      color: var(--theme-bg-brand);
+    }
+
+    & .ipt-gradient-border {
+      background-image: var(--theme-gradient-border);
+
+      & > input{
+        margin: 1px;
+        padding: 3px 7px;
+        background-color: var(--theme-bg-tertiary);
+      }
+    }
+  }
+
+  &:has(:focus) {
+    & .ipt-gradient-border {
+      background-image: var(--theme-gradient-border);
+
+      & > input {
+        margin: 2px;
+        padding: 2px 6px;
+        background-color: var(--theme-bg-tertiary);
+      }
+    }
   }
 }
