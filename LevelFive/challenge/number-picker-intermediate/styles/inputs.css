@@ -1,0 +1,59 @@
+.btn-gradient-spin {
+  all: unset;
+
+  position: relative;
+  border-radius: .5rem;
+  padding: 1rem;
+  overflow: hidden;
+
+  background-color: var(--theme-bg-tertiary);
+  
+  & .gradient-spin {
+    position: absolute;
+
+    right: -5%;
+    left: -5%;
+
+    top: -50px; /* TODO: Fix it */
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+    transition: background 333ms ease-out;
+  }
+
+  &:hover {
+    & .gradient-spin {
+      background: var(--theme-gradient-bg);
+      animation: spin 500ms linear infinite;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    inset: 2px;
+    background-color: var(--theme-bg-primary);
+    z-index: 1;
+  }
+
+  & span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font: var(--text-label-md);
+    color: white;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
