@@ -1,4 +1,6 @@
 @import url(globals.css);
+@import url(layout.css);
 @import url(btn-gradient.css);
 @import url(animated-number.css);
 @import url(inputs.css);
+@import url(form.css);

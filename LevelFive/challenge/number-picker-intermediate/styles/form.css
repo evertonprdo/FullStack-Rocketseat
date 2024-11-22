@@ -1,0 +1,6 @@
+form {
+  & > .inputs-wrapper {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}

@@ -60,19 +60,39 @@
   --anim-bezier-bounce: cubic-bezier(.47,1.64,.41,.8);
 }
 
-html {
+html, body {
+  font: var(--text-md);
+  color: var(--theme-content-secondary);
   background-color: var(--theme-bg-primary);
 }
 
-main {
-  margin-inline: auto;
-  width: 50vw;
-  height: 100vh;
+h1, h2, h3 {
+  font: inherit;
+  color: inherit;
+}
 
+.flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+}
 
-  gap: 1rem;
+.grid {
+  display: grid;
+}
+
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (width > 1000px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
 }

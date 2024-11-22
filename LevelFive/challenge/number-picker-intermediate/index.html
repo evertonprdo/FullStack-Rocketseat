@@ -16,14 +16,85 @@
 </head>
 
 <body>
-  <main>
-    <div class="input-wrapper">
-      <label>Label</label>
-      <div class="ipt-gradient-border">
-        <input>
-      </div>
+  <div id="app" class="flex">
+    <img src="assets/logo.svg" alt="logo">
+
+    <div class="grid content">
+      <header>
+        <span>Online - Free</span>
+        <h1>Number Picker</h1>
+      </header>
+
+      <section id="info">
+        <div class="card flex">
+          <img src="assets/icons/user-chat.svg">
+          <div>
+            <h3>How does the number picker work?</h3>
+            <p>
+              O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo
+              especificado pelo usuário.
+            </p>
+          </div>
+        </div>
+        <div class="card flex">
+          <img src="assets/icons/user-chat.svg">
+          <div>
+            <h3>Can I choose the range of numbers?</h3>
+            <p>
+              Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <main>
+        <div class="main-container">
+          <header>
+            <h2>
+              I want to draw:
+            </h2>
+            <p>
+              set the range and number of numbers, click "Draw" and see the results on the screen. It's quick and easy!
+            </p>
+          </header>
+          <form>
+            <div class="inputs-wrapper flex">
+              <div class="ipt-wrapper">
+                <label>Number</label>
+                <div class="ipt-gradient-border">
+                  <input>
+                </div>
+              </div>
+              <div class="ipt-wrapper">
+                <label>of</label>
+                <div class="ipt-gradient-border">
+                  <input>
+                </div>
+              </div>
+              <div class="ipt-wrapper">
+                <label>of</label>
+                <div class="ipt-gradient-border">
+                  <input>
+                </div>
+              </div>
+            </div>
+            <div class="toggle-wrapper flex">
+              <input class="toggle" type="checkbox">
+              <label>Do not repeat a number</label>
+            </div>
+            <button class="btn-gradient">
+              <span>Draw</span>
+              <div class="spin-icon">
+                <img src="assets/icons/arrow-right.svg">
+              </div>
+            </button>
+          </form>
+        </div>
+      </main>
     </div>
-  </main>
+
+    <div class="empty"></div>
+  </div>
 </body>
 
 </html>

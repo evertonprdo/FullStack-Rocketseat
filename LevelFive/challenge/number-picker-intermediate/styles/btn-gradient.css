@@ -1,5 +1,7 @@
 .btn-gradient {
   all: unset;
+  box-sizing: border-box;
+  
   position: relative;
   overflow: hidden;
   cursor: pointer;

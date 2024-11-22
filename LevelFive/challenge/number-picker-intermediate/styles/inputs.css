@@ -1,3 +1,11 @@
+.toggle-wrapper {
+  align-items: center;
+  gap: 8px;
+
+  font: var(--text-sm);
+  color: var(--theme-content-primary);
+}
+
 input.toggle {
   /* Toggle config bellow */
   --lc-anim-config: 500ms var(--anim-bezier-bounce);
@@ -60,7 +68,7 @@ input.toggle {
   }
 }
 
-.input-wrapper {
+.ipt-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,19 +77,31 @@ input.toggle {
   & label {
     font: var(--text-label-md);
     color: var(--theme-content-secondary);
+    text-transform: uppercase;
   }
 
   & .ipt-gradient-border {
+    --lc--ipt-bg-color: var(--theme-bg-secondary);
+    --lc-ipt-border-width: 0px;
+
     position: relative;
 
     background-image: none;
     border-radius: 8px;
 
     &>input {
-      all: unset;
-      background-color: var(--theme-bg-secondary);
+      --lc-ipt-padding: 
+        calc(4px - var(--lc-ipt-border-width)) 
+        calc(8px - var(--lc-ipt-border-width));
 
-      padding: 4px 8px;
+      all: unset;
+      box-sizing: border-box;
+      background-color: var(--lc--ipt-bg-color);
+
+      width: calc(100% - (var(--lc-ipt-border-width) * 2));
+
+      padding: var(--lc-ipt-padding);
+      margin: var(--lc-ipt-border-width);
       border-radius: inherit;
 
       font: var(--text-display-sm);
@@ -96,25 +116,17 @@ input.toggle {
     }
 
     & .ipt-gradient-border {
-      background-image: var(--theme-gradient-border);
+      --lc--ipt-bg-color: var(--theme-bg-tertiary);
+      --lc-ipt-border-width: 1px;
 
-      & > input{
-        margin: 1px;
-        padding: 3px 7px;
-        background-color: var(--theme-bg-tertiary);
-      }
+      background-image: var(--theme-gradient-border);
     }
   }
 
-  &:has(:focus) {
-    & .ipt-gradient-border {
-      background-image: var(--theme-gradient-border);
+  &:has(:focus) .ipt-gradient-border {
+    --lc--ipt-bg-color: var(--theme-bg-tertiary);
+    --lc-ipt-border-width: 2px;
 
-      & > input {
-        margin: 2px;
-        padding: 2px 6px;
-        background-color: var(--theme-bg-tertiary);
-      }
-    }
+    background-image: var(--theme-gradient-border);
   }
 }
