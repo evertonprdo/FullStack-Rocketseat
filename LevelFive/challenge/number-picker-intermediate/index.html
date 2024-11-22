@@ -17,20 +17,26 @@
 
 <body>
   <main>
-    <button class="btn-gradient">
-      <span>Draw</span>
-      <div class="spin-icon">
-        <img src="assets/icons/arrow-right.svg">
-      </div>
+    <div id="result-wrapper">
+      <div class="animated-number" aria-label="25"></div>
+    </div>
+
+    <button id="add-new" class="btn-gradient">
+      <span>Add new number</span>
     </button>
 
-    <button class="btn-gradient">
-      <span>Draw again</span>
-      <div class="spin-icon">
-        <img src="assets/icons/curved-arrow.svg">
-        <img src="assets/icons/play.svg">
-      </div>
-    </button>
+    <script>
+      const container = document.getElementById('result-wrapper')
+      const BtnAddNew = document.getElementById('add-new')
+
+      BtnAddNew.onclick = () => {
+        const item = document.createElement('div')
+        item.classList.add('animated-number')
+        item.setAttribute('aria-label', '25')
+
+        container.appendChild(item)
+      }
+    </script>
   </main>
 </body>
 
