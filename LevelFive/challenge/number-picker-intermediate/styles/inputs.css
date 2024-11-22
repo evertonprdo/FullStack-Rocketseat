@@ -3,7 +3,6 @@
 
   position: relative;
   border-radius: .5rem;
-  padding: 1rem;
   overflow: hidden;
 
   background-color: var(--theme-bg-tertiary);
@@ -11,19 +10,22 @@
   & .gradient-spin {
     position: absolute;
 
+    top: 50%;
     right: -5%;
     left: -5%;
 
-    top: -50px; /* TODO: Fix it */
     aspect-ratio: 1 / 1;
 
+    transition: opacity 300ms ease-out;
+    background: var(--theme-gradient-bg);
     border-radius: 50%;
-    transition: background 333ms ease-out;
+    opacity: 0;
+    transform: translateY(-50%);
   }
 
   &:hover {
     & .gradient-spin {
-      background: var(--theme-gradient-bg);
+      opacity: 1;
       animation: spin 500ms linear infinite;
     }
   }
@@ -41,6 +43,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 1rem;
 
     font: var(--text-label-md);
     color: white;
@@ -51,9 +54,9 @@
 
 @keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: translateY(-50%) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(-50%) rotate(360deg);
   }
 }
