@@ -1,24 +1,35 @@
 input.toggle {
-  --lc-anim-config: 300ms ease-out;
+  /* Toggle config bellow */
+  --lc-anim-config: 500ms var(--anim-bezier-bounce);
+
+  --lc-toggle-width: 30px;
+  --lc-toggle-aspect-ratio: 3 / 2;
+  --lc-toggle-circle-percent: .7;
+
+  /* Toggle config above */
+
+  --lc-toggle-height: calc(var(--lc-toggle-width) / (var(--lc-toggle-aspect-ratio)));
+  --lc-circle-height: calc(var(--lc-toggle-height) * var(--lc-toggle-circle-percent));
+  --lc-toggle-padding: calc(var(--lc-toggle-height) * ((1 - var(--lc-toggle-circle-percent)) / 2));
 
   all: unset;
   position: relative;
 
-  height: 20px;
-  width: 30px;
+  width: var(--lc-toggle-width);
+  height: var(--lc-toggle-height);
 
-  border-radius: 16px;
+  border-radius: 9999px;
   background: var(--theme-content-tertiary);
 
   &::after {
     content: '';
 
     position: absolute;
-    top: 3px;
-    left: 3px;
+    top: var(--lc-toggle-padding);
+    left: var(--lc-toggle-padding);
 
-    height: 14px;
-    width: 14px;
+    height: var(--lc-circle-height);
+    aspect-ratio: 1 / 1;
 
     border-radius: 50%;
     background-color: var(--theme-content-primary);
@@ -29,13 +40,13 @@ input.toggle {
 
   &::before {
     content: '';
-    
+
     position: absolute;
     inset: 0;
-    
+
     border-radius: inherit;
     background: var(--theme-gradient-bg);
-    
+
     opacity: 0;
     transition: opacity var(--lc-anim-config);
   }
@@ -45,6 +56,65 @@ input.toggle {
   }
 
   &:checked::after {
-    margin-left: 10px;
+    margin-left: calc(var(--lc-toggle-width) - var(--lc-toggle-height));
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  & label {
+    font: var(--text-label-md);
+    color: var(--theme-content-secondary);
+  }
+
+  & .ipt-gradient-border {
+    position: relative;
+
+    background-image: none;
+    border-radius: 8px;
+
+    &>input {
+      all: unset;
+      background-color: var(--theme-bg-secondary);
+
+      padding: 4px 8px;
+      border-radius: inherit;
+
+      font: var(--text-display-sm);
+      color: var(--theme-content-primary);
+      text-align: center;
+    }
+  }
+
+  &:hover {
+    & label {
+      color: var(--theme-bg-brand);
+    }
+
+    & .ipt-gradient-border {
+      background-image: var(--theme-gradient-border);
+
+      & > input{
+        margin: 1px;
+        padding: 3px 7px;
+        background-color: var(--theme-bg-tertiary);
+      }
+    }
+  }
+
+  &:has(:focus) {
+    & .ipt-gradient-border {
+      background-image: var(--theme-gradient-border);
+
+      & > input {
+        margin: 2px;
+        padding: 2px 6px;
+        background-color: var(--theme-bg-tertiary);
+      }
+    }
   }
 }

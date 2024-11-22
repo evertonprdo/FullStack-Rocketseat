@@ -46,7 +46,7 @@
 
   --text-display-lg: 800 4.5rem/1.3 var(--ff-display);
   --text-display-md: 800 2.5rem/1.3 var(--ff-display);
-  --text-display-small: 700 2rem/1.3 var(--ff-display);
+  --text-display-sm: 700 2rem/1.3 var(--ff-display);
 
   --text-overline: 700 1rem/1.5 "Roboto Mono", serif;
 
