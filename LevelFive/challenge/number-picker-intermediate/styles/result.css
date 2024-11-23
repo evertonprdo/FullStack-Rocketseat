@@ -1,13 +1,23 @@
-#result-wrapper {
-  width: 100%;
+#result {
+  text-align: center;
+  text-transform: uppercase;
+}
 
+.result-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  width: 100%;
+  min-height: 100px;
+  margin-block: 48px;
+
   gap: 1rem;
+
+  transition: height 300ms ease-in-out;
 }
 
-#result-wrapper {
+.result-wrapper {
   --entrance-time: 350ms;
   --text-appear-time: 300ms;
   --grow-time: 730ms;
@@ -15,7 +25,7 @@
   --shrink-time: 730ms;
 }
 
-#result-wrapper .animated-number {
+.result-wrapper .animated-number {
   position: relative;
 
   display: flex;
@@ -28,6 +38,7 @@
   font-family: "Roboto Mono", serif;
   font-size: 4rem;
   line-height: 1.5;
+  color: var(--theme-content-inverse);
 
   scale: 0;
   animation: 
@@ -72,7 +83,7 @@
   }
 }
 
-#result-wrapper .animated-number:first-child {
+.result-wrapper .animated-number:first-child {
   animation: 
     entrance forwards var(--entrance-time), 
     scale-up forwards var(--anim-bezier-bounce) var(--grow-time);

@@ -47,53 +47,77 @@
         </div>
       </section>
 
-      <main>
-        <div class="main-container">
-          <header>
-            <h2>
-              I want to draw:
-            </h2>
-            <p>
-              set the range and number of numbers, click "Draw" and see the results on the screen. It's quick and easy!
-            </p>
-          </header>
-          <form>
-            <div class="inputs-wrapper flex">
-              <div class="ipt-wrapper">
-                <label>Number</label>
-                <div class="ipt-gradient-border">
-                  <input>
-                </div>
-              </div>
-              <div class="ipt-wrapper">
-                <label>of</label>
-                <div class="ipt-gradient-border">
-                  <input>
-                </div>
-              </div>
-              <div class="ipt-wrapper">
-                <label>of</label>
-                <div class="ipt-gradient-border">
-                  <input>
-                </div>
+      <main id="entry">
+        <header>
+          <h2>
+            I want to draw:
+          </h2>
+          <p>
+            set the range and number of numbers, click "Draw" and see the results on the screen. It's quick and easy!
+          </p>
+        </header>
+
+        <form>
+          <div class="inputs-wrapper flex">
+            <div class="ipt-wrapper">
+              <label for="pick-amount">Number</label>
+              <div class="ipt-gradient-border">
+                <input id="pick-amount" required>
               </div>
             </div>
-            <div class="toggle-wrapper flex">
-              <input class="toggle" type="checkbox">
-              <label>Do not repeat a number</label>
-            </div>
-            <button class="btn-gradient">
-              <span>Draw</span>
-              <div class="spin-icon">
-                <img src="assets/icons/arrow-right.svg">
+
+            <div class="ipt-wrapper">
+              <label for="range-from">from</label>
+              <div class="ipt-gradient-border">
+                <input id="range-from" required>
               </div>
-            </button>
-          </form>
-        </div>
+            </div>
+
+            <div class="ipt-wrapper">
+              <label for="range-to">to</label>
+              <div class="ipt-gradient-border">
+                <input id="range-to" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="toggle-wrapper flex">
+            <input id="toggle" class="toggle" type="checkbox">
+            <label for="toggle">Do not repeat a number</label>
+          </div>
+
+          <button class="btn-gradient">
+            <span>Draw</span>
+            <div class="spin-icon">
+              <img src="assets/icons/arrow-right.svg">
+            </div>
+          </button>
+        </form>
+      </main>
+
+      <main id="result" class="hidden">
+        <header>
+          <h2>
+            Draw result
+          </h2>
+          <p>1º result</p>
+        </header>
+
+        <div class="result-wrapper"></div>
+
+        <button class="btn-gradient">
+          <span>Draw again</span>
+          <div class="spin-icon">
+            <img src="assets/icons/curved-arrow.svg">
+            <img src="assets/icons/play.svg">
+          </div>
+        </button>
       </main>
     </div>
 
-    <div class="empty"></div>
+    <footer>
+      <p>Design created by <a href="https://www.linkedin.com/in/thielesantana/" target="_blank">Thiele Santana</a></p>
+    </footer>
   </div>
 </body>
 
