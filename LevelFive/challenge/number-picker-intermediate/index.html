@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Picker</title>
+
+  <link rel="stylesheet" href="styles/index.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="flex">
+    <img src="assets/logo.svg" alt="logo">
+
+    <div class="grid content">
+      <header>
+        <span>Online - Free</span>
+        <h1>Number Picker</h1>
+      </header>
+
+      <section id="info">
+        <div class="card flex">
+          <img src="assets/icons/user-chat.svg">
+          <div>
+            <h3>How does the number picker work?</h3>
+            <p>
+              O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo
+              especificado pelo usuário.
+            </p>
+          </div>
+        </div>
+        <div class="card flex">
+          <img src="assets/icons/user-chat.svg">
+          <div>
+            <h3>Can I choose the range of numbers?</h3>
+            <p>
+              Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <main id="entry">
+        <header>
+          <h2>
+            I want to draw:
+          </h2>
+          <p>
+            set the range and number of numbers, click "Draw" and see the results on the screen. It's quick and easy!
+          </p>
+        </header>
+
+        <form>
+          <div class="inputs-wrapper flex">
+            <div class="ipt-wrapper">
+              <label for="pick-amount">Number</label>
+              <div class="ipt-gradient-border">
+                <input id="pick-amount" required autocomplete="off">
+              </div>
+            </div>
+
+            <div class="ipt-wrapper">
+              <label for="range-from">from</label>
+              <div class="ipt-gradient-border">
+                <input id="range-from" required autocomplete="off">
+              </div>
+            </div>
+
+            <div class="ipt-wrapper">
+              <label for="range-to">to</label>
+              <div class="ipt-gradient-border">
+                <input id="range-to" required autocomplete="off">
+              </div>
+            </div>
+          </div>
+
+          <div class="toggle-wrapper flex">
+            <input id="toggle" class="toggle" type="checkbox">
+            <label for="toggle">Do not repeat a number</label>
+          </div>
+
+          <button class="btn-gradient">
+            <span>Draw</span>
+            <div class="spin-icon">
+              <img src="assets/icons/arrow-right.svg">
+            </div>
+          </button>
+        </form>
+      </main>
+
+      <main id="result" class="hidden">
+        <header>
+          <h2>
+            Draw result
+          </h2>
+          <p id="counter-label">1º result</p>
+        </header>
+
+        <div id="result-wrapper" class="result-wrapper"></div>
+
+        <div class="draw-again-wrapper">
+          <button class="btn-gradient" id="btn-draw-again">
+            <span>Draw again</span>
+            <div class="spin-icon">
+              <img src="assets/icons/curved-arrow.svg">
+              <img src="assets/icons/play.svg">
+            </div>
+          </button>
+        </div>
+
+      </main>
+    </div>
+
+    <footer>
+      <p>Design created by <a href="https://www.linkedin.com/in/thielesantana/" target="_blank">Thiele Santana</a></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

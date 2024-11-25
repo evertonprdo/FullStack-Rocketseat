@@ -1,0 +1,144 @@
+#app {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
+  padding-block: 44px;
+  gap: 46px;
+
+  background-image:
+    linear-gradient(#000000, #00000099),
+    url('../assets/images/bg-mobile.png');
+
+  &>img {
+    width: 173px;
+    display: block;
+  }
+}
+
+#app>.content {
+  grid-template-areas:
+    'header'
+    'main'
+    'info';
+
+  max-width: 572px;
+  margin-inline: auto;
+  padding-inline: 36px;
+
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 70px;
+}
+
+#app > .content > header {
+  grid-area: header;
+
+  &>h1 {
+    font: var(--text-display-md);
+    color: var(--theme-content-primary);
+    text-transform: uppercase;
+  }
+
+  &>span {
+    display: block;
+    font: var(--text-overline);
+    text-transform: uppercase;
+    background: var(--theme-gradient-content);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+#app>.content > main {
+  grid-area: main;
+  align-self: center;
+
+  & > header > h2{
+    font: var(--text-label-md);
+    color: var(--theme-content-primary);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  & > header > p {
+    font: var(--text-lg);
+  }
+
+  & .inputs-wrapper {
+    margin-block: 40px 20px;
+    justify-content: flex-start;
+  }
+
+  & .toggle-wrapper {
+    margin-bottom: 40px;
+  }
+}
+
+#info {
+  grid-area: info;
+   
+  & > .card {
+    gap: 8px;
+    align-items: flex-start;
+
+    & h3 {
+      color: var(--theme-content-brand);
+    }
+
+    & p {
+      font: var(--text-sm);
+    }
+  }
+
+  & > .card + .card {
+    padding-top: 36px;
+  }
+}
+
+@media (width > 1080px) {
+  #app {
+    justify-content: space-between;
+    padding-block: 64px;
+    gap: 16px;
+
+    & > img {
+      align-self: flex-start;
+      margin-bottom: 0;
+      margin-left: 120px;
+    }
+  }
+
+  #app > .content {
+    max-width: 1170px;
+
+    grid-template-areas:
+      'header main'
+      'info main';
+
+    grid-template-columns: 1fr .95fr;
+    grid-template-rows: min-content min-content;
+
+    align-items: center;
+    gap: 38px 108px;
+
+    &>header>h1 {
+      font: var(--text-display-lg);
+    }
+
+    & > #info {
+      max-width: 386px;
+    }
+  }
+
+  #app > footer {
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+  }
+}

@@ -1,0 +1,141 @@
+#result {
+  text-align: center;
+  text-transform: uppercase;
+
+  & .draw-again-wrapper {
+    height: 0;
+    opacity: 0;
+    animation: btn-entrance 500ms forwards;
+  }
+}
+
+.result-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100px;
+  margin-block: 48px;
+
+  gap: 1rem;
+}
+
+.result-wrapper {
+  --entrance-time: 350ms;
+  --text-appear-time: 300ms;
+  --grow-time: 730ms;
+  --rotate-time: 1.2s;
+  --shrink-time: 730ms;
+}
+
+.result-wrapper .animated-number {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 700;
+  font-family: "Roboto Mono", serif;
+  font-size: 4rem;
+  line-height: 1.5;
+  color: var(--theme-content-inverse);
+
+  scale: 0;
+  animation: 
+    entrance forwards var(--entrance-time), 
+    scale-up forwards var(--anim-bezier-bounce) var(--grow-time) var(--entrance-time);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    border-radius: 28px;
+    background-color: var(--theme-content-brand);
+
+    animation: 
+      rotate
+        var(--anim-bezier-bounce)
+        var(--rotate-time) 
+        calc(var(--entrance-time) + var(--grow-time)),
+      
+      scale-down forwards 
+        var(--anim-bezier-bounce) 
+        var(--shrink-time)
+        calc(var(--entrance-time) + var(--grow-time) + var(--rotate-time));
+  }
+
+  &::after {
+    content: attr(aria-label);
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+
+    animation:
+      fade-in forwards 
+        var(--text-appear-time) 
+        calc(var(--entrance-time) + var(--grow-time) + (var(--rotate-time) * .2)),
+      
+      text-ending forwards
+        ease-in-out
+        var(--shrink-time) 
+        calc(var(--entrance-time) + var(--grow-time) + var(--rotate-time));
+  }
+}
+
+.result-wrapper .animated-number:first-child {
+  animation: 
+    entrance forwards var(--entrance-time), 
+    scale-up forwards var(--anim-bezier-bounce) var(--grow-time);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes entrance {
+  to {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes btn-entrance {
+  50% {
+    opacity: 0;
+    height: 56px;
+  }
+  100% {
+    opacity: 1;
+    height: 56px;
+  }
+}
+
+@keyframes scale-up {
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes scale-down {
+  to {
+    scale: 0;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes text-ending {
+  to {
+    font-size: 3rem;
+    color: var(--theme-content-brand);
+  }
+}
