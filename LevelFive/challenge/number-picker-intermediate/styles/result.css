@@ -1,6 +1,12 @@
 #result {
   text-align: center;
   text-transform: uppercase;
+
+  & .draw-again-wrapper {
+    height: 0;
+    opacity: 0;
+    animation: btn-entrance 500ms forwards;
+  }
 }
 
 .result-wrapper {
@@ -13,8 +19,6 @@
   margin-block: 48px;
 
   gap: 1rem;
-
-  transition: height 300ms ease-in-out;
 }
 
 .result-wrapper {
@@ -31,8 +35,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 100px;
 
   font-weight: 700;
   font-family: "Roboto Mono", serif;
@@ -98,6 +100,18 @@
 @keyframes entrance {
   to {
     width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes btn-entrance {
+  50% {
+    opacity: 0;
+    height: 56px;
+  }
+  100% {
+    opacity: 1;
+    height: 56px;
   }
 }
 
