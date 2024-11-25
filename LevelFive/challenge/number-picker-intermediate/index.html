@@ -62,21 +62,21 @@
             <div class="ipt-wrapper">
               <label for="pick-amount">Number</label>
               <div class="ipt-gradient-border">
-                <input id="pick-amount" required>
+                <input id="pick-amount" required autocomplete="off">
               </div>
             </div>
 
             <div class="ipt-wrapper">
               <label for="range-from">from</label>
               <div class="ipt-gradient-border">
-                <input id="range-from" required>
+                <input id="range-from" required autocomplete="off">
               </div>
             </div>
 
             <div class="ipt-wrapper">
               <label for="range-to">to</label>
               <div class="ipt-gradient-border">
-                <input id="range-to" required>
+                <input id="range-to" required autocomplete="off">
               </div>
             </div>
           </div>
@@ -100,18 +100,21 @@
           <h2>
             Draw result
           </h2>
-          <p>1º result</p>
+          <p id="counter-label">1º result</p>
         </header>
 
-        <div class="result-wrapper"></div>
+        <div id="result-wrapper" class="result-wrapper"></div>
 
-        <button class="btn-gradient">
-          <span>Draw again</span>
-          <div class="spin-icon">
-            <img src="assets/icons/curved-arrow.svg">
-            <img src="assets/icons/play.svg">
-          </div>
-        </button>
+        <div class="draw-again-wrapper">
+          <button class="btn-gradient" id="btn-draw-again">
+            <span>Draw again</span>
+            <div class="spin-icon">
+              <img src="assets/icons/curved-arrow.svg">
+              <img src="assets/icons/play.svg">
+            </div>
+          </button>
+        </div>
+
       </main>
     </div>
 
@@ -119,6 +122,8 @@
       <p>Design created by <a href="https://www.linkedin.com/in/thielesantana/" target="_blank">Thiele Santana</a></p>
     </footer>
   </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
