@@ -23,7 +23,70 @@
          rel="stylesheet"
       />
    </head>
+
    <body>
-      <h1>World Pet Schedules</h1>
+      <div id="app">
+         <img
+            src="src/assets/logo.svg"
+            alt="logo"
+         />
+
+         <main>
+            <header>
+               <h1>Your schedule</h1>
+               <p>Here you can see all the clients and services scheduled for today.</p>
+
+               <div class="date-wrapper">
+                  <input
+                     id="ipt-date"
+                     type="date"
+                  />
+                  <img src="src/assets/arrow-down.svg" />
+               </div>
+            </header>
+
+            <section id="morning">
+               <header>
+                  <img src="src/assets/morning-icon.svg" />
+                  <h2>Morning</h2>
+                  <span>9 AM - 12 PM</span>
+               </header>
+
+               <ul></ul>
+            </section>
+
+            <section id="afternoon">
+               <header>
+                  <img src="src/assets/afternoon-icon.svg" />
+                  <h2>Afternoon</h2>
+                  <span>1 PM - 6 PM</span>
+               </header>
+
+               <ul></ul>
+            </section>
+
+            <section id="night">
+               <header>
+                  <img src="src/assets/night-icon.svg" />
+                  <h2>Night</h2>
+                  <span>7 PM - 21 PM</span>
+               </header>
+
+               <ul></ul>
+            </section>
+         </main>
+
+         <button class="only-desktop filter-glow">New Schedule</button>
+
+         <footer class="only-mobile">
+            <button class="filter-glow">New Schedule</button>
+         </footer>
+
+         <aside class="bg-bluer hidden">
+            <form action="">
+               <h2>Schedule your appointment</h2>
+            </form>
+         </aside>
+      </div>
    </body>
 </html>

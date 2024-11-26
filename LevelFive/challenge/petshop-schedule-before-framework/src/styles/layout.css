@@ -1,0 +1,65 @@
+#app {
+   position: relative;
+   height: 100vh;
+   width: 100vw;
+   overflow: hidden;
+}
+
+#app > main {
+   padding: 12px 20px;
+   margin-block: 54px 128px;
+}
+
+#app > img[src*='logo'] {
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 12px 20px;
+
+   background-color: #2e2c30;
+   border-bottom-right-radius: 12px;
+}
+
+#app > button.only-desktop {
+   position: absolute;
+   right: 30px;
+   bottom: 33px;
+   display: none;
+}
+
+#app > footer.only-mobile {
+   position: absolute;
+
+   bottom: 0;
+   left: 0;
+   right: 0;
+   padding: 18px 20px;
+
+   background-color: var(--theme-bg-tertiary);
+   display: flex;
+   justify-content: center;
+}
+
+.bg-bluer {
+   position: absolute;
+   inset: 0;
+   backdrop-filter: blur(6px);
+   background: rgba(0, 0, 0, 0.01);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@media (width >= 56em) {
+   #app > main {
+   }
+
+   #app > footer.only-mobile {
+      display: none;
+   }
+
+   #app > button.only-desktop {
+      display: block;
+   }
+}
