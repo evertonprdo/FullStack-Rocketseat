@@ -46,13 +46,16 @@
    --text-label-sm: 700 0.75rem/1.333 var(--ff-inter);
 
    --text-link: 500 0.75rem/1.333 var(--ff-inter);
+
+   --micro-transition: 300ms ease-out;
 }
 
 html,
 body {
    background-color: var(--theme-bg-primary);
-   font: text;
+   font: var(--text);
    color: var(--theme-content-secondary);
+   overflow: hidden;
 }
 
 h1,
@@ -61,4 +64,18 @@ h3,
 h4 {
    font: inherit;
    color: inherit;
+}
+
+button {
+   all: unset;
+   box-sizing: border-box;
+   cursor: pointer;
+}
+
+ul[role='list'] {
+   list-style: none;
+}
+
+.hidden {
+   display: none !important;
 }
