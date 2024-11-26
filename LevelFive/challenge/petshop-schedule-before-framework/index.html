@@ -35,58 +35,169 @@
             <header>
                <h1>Your schedule</h1>
                <p>Here you can see all the clients and services scheduled for today.</p>
-
-               <div class="date-wrapper">
-                  <input
-                     id="ipt-date"
-                     type="date"
-                  />
-                  <img src="src/assets/arrow-down.svg" />
-               </div>
+               <input
+                  id="ipt-date"
+                  type="date"
+               />
             </header>
 
             <section id="morning">
                <header>
                   <img src="src/assets/morning-icon.svg" />
                   <h2>Morning</h2>
-                  <span>9 AM - 12 PM</span>
+                  <span>9 am - 12 pm</span>
                </header>
 
-               <ul></ul>
+               <ul role="list">
+                  <li>
+                     <span>9 AM</span>
+                     <span>Thor <small>/ John</small></span>
+                     <span>Vaccination</span>
+                     <button>Remove schedule</button>
+                  </li>
+                  <li>
+                     <span>9 AM</span>
+                     <span>Thor <small>/ John</small></span>
+                     <span>Vaccination</span>
+                     <button>Remove schedule</button>
+                  </li>
+               </ul>
             </section>
 
             <section id="afternoon">
                <header>
                   <img src="src/assets/afternoon-icon.svg" />
                   <h2>Afternoon</h2>
-                  <span>1 PM - 6 PM</span>
+                  <span>1 pm - 6 pm</span>
                </header>
 
-               <ul></ul>
+               <ul role="list">
+                  <li>
+                     <span>9 AM</span>
+                     <span>Thor <small>/ John</small></span>
+                     <span>Vaccination</span>
+                     <button>Remove schedule</button>
+                  </li>
+               </ul>
             </section>
 
             <section id="night">
                <header>
                   <img src="src/assets/night-icon.svg" />
                   <h2>Night</h2>
-                  <span>7 PM - 21 PM</span>
+                  <span>7 pm - 21 pm</span>
                </header>
 
-               <ul></ul>
+               <ul role="list">
+                  <li>
+                     <span>9 AM</span>
+                     <span>Thor <small>/ John</small></span>
+                     <span>Vaccination</span>
+                     <button>Remove schedule</button>
+                  </li>
+               </ul>
             </section>
          </main>
 
-         <button class="only-desktop filter-glow">New Schedule</button>
-
-         <footer class="only-mobile">
-            <button class="filter-glow">New Schedule</button>
+         <footer>
+            <button
+               id="btn-new-schedule"
+               class="filter-glow btn-primary"
+            >
+               New Schedule
+            </button>
          </footer>
+      </div>
 
-         <aside class="bg-bluer hidden">
-            <form action="">
+      <div
+         id="bluer-bg-container"
+         class="bg-bluer hidden"
+      >
+         <aside id="form-container">
+            <img
+               id="btn-icon-x"
+               src="./src/assets/x.svg"
+            />
+
+            <header>
                <h2>Schedule your appointment</h2>
+               <p>Fill in the customer details to schedule an appointment:</p>
+               <button></button>
+            </header>
+
+            <form>
+               <div
+                  class="input-wrapper"
+                  style="--icon-img-url: url(./src/assets/user.svg)"
+               >
+                  <label for="author-name">Author name</label>
+                  <input
+                     id="author-name"
+                     type="text"
+                     placeholder="John Doe"
+                  />
+               </div>
+
+               <div
+                  class="input-wrapper"
+                  style="--icon-img-url: url(./src/assets/pet-paw.svg)"
+               >
+                  <label for="pet-name">Pet name</label>
+                  <input
+                     id="pet-name"
+                     type="text"
+                     placeholder="Cheddar"
+                  />
+               </div>
+
+               <div class="input-wrapper">
+                  <label for="description">Service description</label>
+                  <textarea
+                     id="description"
+                     placeholder="Bath and grooming"
+                  ></textarea>
+               </div>
+
+               <div class="inputs-wrapper">
+                  <div
+                     class="input-wrapper"
+                     style="--icon-img-url: url(./src/assets/calendar.svg)"
+                  >
+                     <label for="form-date">Date</label>
+                     <input
+                        id="form-date"
+                        type="date"
+                     />
+                  </div>
+                  <div
+                     class="input-wrapper"
+                     style="--icon-img-url: url(./src/assets/clock.svg)"
+                  >
+                     <label for="form-time">Time</label>
+                     <input
+                        id="form-time"
+                        type="time"
+                     />
+                  </div>
+               </div>
+
+               <button class="btn-primary">Schedule</button>
             </form>
          </aside>
       </div>
+
+      <script>
+         const containerBluerBg = document.getElementById('bluer-bg-container')
+         const btnNewSchedule = document.getElementById('btn-new-schedule')
+         const btnIconX = document.getElementById('btn-icon-x')
+
+         btnNewSchedule.onclick = () => {
+            containerBluerBg.classList.remove('hidden')
+         }
+
+         btnIconX.onclick = () => {
+            containerBluerBg.classList.add('hidden')
+         }
+      </script>
    </body>
 </html>

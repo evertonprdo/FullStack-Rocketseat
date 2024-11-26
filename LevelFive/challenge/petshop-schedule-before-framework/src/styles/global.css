@@ -55,6 +55,7 @@ body {
    background-color: var(--theme-bg-primary);
    font: var(--text);
    color: var(--theme-content-secondary);
+   overflow: hidden;
 }
 
 h1,
@@ -63,6 +64,16 @@ h3,
 h4 {
    font: inherit;
    color: inherit;
+}
+
+button {
+   all: unset;
+   box-sizing: border-box;
+   cursor: pointer;
+}
+
+ul[role='list'] {
+   list-style: none;
 }
 
 .hidden {
