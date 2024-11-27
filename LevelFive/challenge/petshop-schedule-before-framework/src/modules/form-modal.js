@@ -7,8 +7,6 @@ export class FormModal {
    #form
    #inputs
 
-   #onSubmitCallback
-
    get modal() {
       return this.#modal
    }
@@ -19,8 +17,9 @@ export class FormModal {
       this.#form = document.querySelector('#form-container > form')
       this.#btnClose = document.getElementById('btn-close')
 
-      this.#onSubmitCallback = onSubmit
-      this.#form.addEventListener('submit', this.#onSubmit.bind(this))
+      this.#form.addEventListener('submit', (event) =>
+         this.#onSubmit(event, onSubmit),
+      )
 
       this.#btnClose.addEventListener('click', onClose)
 
@@ -60,20 +59,31 @@ export class FormModal {
    }
 
    #onIptDateChange(event) {
-      const iptDate = dayjs(event.target.valueAsDate)
+      const iptDate = dayjs(event.target.value)
 
-      console.log(iptDate.format('YYYY-MM-DD'), dayjs().format('YYYY-MM-DD'))
-
-      if (iptDate.format('YYYY-MM-DD') === dayjs().format('YYYY-MM-DD')) {
+      if (iptDate.isSame(new Date(), 'dates')) {
          return this.#inputs.time.setAttribute('min', dayjs().format('HH:mm'))
       }
 
       this.#inputs.time.setAttribute('min', '09:00')
    }
 
-   #onSubmit(event) {
+   #onSubmit(event, callback) {
       event.preventDefault()
 
-      // this.#onSubmitCallback(event)
+      const authorName = this.#inputs.authorName.value.trim()
+      const petName = this.#inputs.petName.value.trim()
+      const description = this.#inputs.description.value.trim()
+
+      const date = this.#inputs.date.valueAsDate.toISOString().split('T')[0]
+      const time = this.#inputs.time.valueAsDate.toISOString().split('T')[1]
+
+      callback({
+         authorName,
+         petName,
+         description,
+         date,
+         time,
+      })
    }
 }

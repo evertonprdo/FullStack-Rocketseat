@@ -7,13 +7,13 @@ export class SchedulesService {
    }
 
    async post({ authorName, petName, description, date }) {
-      const body = {
+      const body = JSON.stringify({
          id: String(new Date().getTime()),
          authorName,
          petName,
          description,
          date,
-      }
+      })
 
       await this.#api.POST({ endpoint: this.#endpoint, body })
    }

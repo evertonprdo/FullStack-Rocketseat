@@ -10,4 +10,13 @@ export class SchedulePresenter {
          time: dayjs(date).format('h A'),
       }
    }
+
+   static toHTTPRequest({ authorName, petName, description, date, time }) {
+      return {
+         authorName,
+         petName,
+         description,
+         date: `${date}T${time}`,
+      }
+   }
 }

@@ -107,9 +107,12 @@
                >
                   <label for="author-name">Author name</label>
                   <input
+                     required
                      id="author-name"
                      type="text"
                      placeholder="John Doe"
+                     minlength="3"
+                     maxlength="25"
                   />
                </div>
 
@@ -119,17 +122,23 @@
                >
                   <label for="pet-name">Pet name</label>
                   <input
+                     required
                      id="pet-name"
                      type="text"
                      placeholder="Cheddar"
+                     minlength="3"
+                     maxlength="25"
                   />
                </div>
 
                <div class="input-wrapper">
                   <label for="description">Service description</label>
                   <textarea
+                     required
                      id="description"
                      placeholder="Bath and grooming"
+                     minlength="5"
+                     maxlength="25"
                   ></textarea>
                </div>
 
