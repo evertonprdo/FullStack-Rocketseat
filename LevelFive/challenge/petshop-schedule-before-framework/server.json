@@ -1,3 +1,25 @@
 {
-   "schedules": []
+  "schedules": [
+    {
+      "id": "1",
+      "authorName": "John",
+      "petName": "Thor",
+      "date": "2024-11-28T08:30:00",
+      "description": "Vaccination"
+    },
+    {
+      "id": "3",
+      "authorName": "John",
+      "petName": "Thor",
+      "date": "2024-11-28T08:30:00",
+      "description": "Vaccination"
+    },
+    {
+      "id": "4",
+      "authorName": "John",
+      "petName": "Thor",
+      "date": "2024-11-28T08:30:00",
+      "description": "Vaccination"
+    }
+  ]
 }
