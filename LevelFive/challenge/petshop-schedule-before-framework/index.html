@@ -34,68 +34,44 @@
          <main>
             <header>
                <h1>Your schedule</h1>
-               <p>Here you can see all the clients and services scheduled for today.</p>
+               <p>
+                  Here you can see all the clients and services scheduled for
+                  today.
+               </p>
                <input
                   id="ipt-date"
                   type="date"
                />
             </header>
 
-            <section id="morning">
+            <section id="morning-list">
                <header>
                   <img src="src/assets/morning-icon.svg" />
                   <h2>Morning</h2>
                   <span>9 am - 12 pm</span>
                </header>
 
-               <ul role="list">
-                  <li>
-                     <span>9 AM</span>
-                     <span>Thor <small>/ John</small></span>
-                     <span>Vaccination</span>
-                     <button>Remove schedule</button>
-                  </li>
-                  <li>
-                     <span>9 AM</span>
-                     <span>Thor <small>/ John</small></span>
-                     <span>Vaccination</span>
-                     <button>Remove schedule</button>
-                  </li>
-               </ul>
+               <ul role="list"></ul>
             </section>
 
-            <section id="afternoon">
+            <section id="afternoon-list">
                <header>
                   <img src="src/assets/afternoon-icon.svg" />
                   <h2>Afternoon</h2>
                   <span>1 pm - 6 pm</span>
                </header>
 
-               <ul role="list">
-                  <li>
-                     <span>9 AM</span>
-                     <span>Thor <small>/ John</small></span>
-                     <span>Vaccination</span>
-                     <button>Remove schedule</button>
-                  </li>
-               </ul>
+               <ul role="list"></ul>
             </section>
 
-            <section id="night">
+            <section id="night-list">
                <header>
                   <img src="src/assets/night-icon.svg" />
                   <h2>Night</h2>
-                  <span>7 pm - 21 pm</span>
+                  <span>7 pm - 9 pm</span>
                </header>
 
-               <ul role="list">
-                  <li>
-                     <span>9 AM</span>
-                     <span>Thor <small>/ John</small></span>
-                     <span>Vaccination</span>
-                     <button>Remove schedule</button>
-                  </li>
-               </ul>
+               <ul role="list"></ul>
             </section>
          </main>
 
@@ -114,10 +90,9 @@
          class="bg-bluer hidden"
       >
          <aside id="form-container">
-            <img
-               id="btn-icon-x"
-               src="./src/assets/x.svg"
-            />
+            <button id="btn-close">
+               <img src="./src/assets/x.svg" />
+            </button>
 
             <header>
                <h2>Schedule your appointment</h2>
@@ -132,9 +107,12 @@
                >
                   <label for="author-name">Author name</label>
                   <input
+                     required
                      id="author-name"
                      type="text"
                      placeholder="John Doe"
+                     minlength="3"
+                     maxlength="25"
                   />
                </div>
 
@@ -144,17 +122,23 @@
                >
                   <label for="pet-name">Pet name</label>
                   <input
+                     required
                      id="pet-name"
                      type="text"
                      placeholder="Cheddar"
+                     minlength="3"
+                     maxlength="25"
                   />
                </div>
 
                <div class="input-wrapper">
                   <label for="description">Service description</label>
                   <textarea
+                     required
                      id="description"
                      placeholder="Bath and grooming"
+                     minlength="5"
+                     maxlength="25"
                   ></textarea>
                </div>
 
@@ -177,27 +161,19 @@
                      <input
                         id="form-time"
                         type="time"
+                        max="21:00"
                      />
                   </div>
                </div>
 
-               <button class="btn-primary">Schedule</button>
+               <button
+                  id="btn-submit"
+                  class="btn-primary"
+               >
+                  Schedule
+               </button>
             </form>
          </aside>
       </div>
-
-      <script>
-         const containerBluerBg = document.getElementById('bluer-bg-container')
-         const btnNewSchedule = document.getElementById('btn-new-schedule')
-         const btnIconX = document.getElementById('btn-icon-x')
-
-         btnNewSchedule.onclick = () => {
-            containerBluerBg.classList.remove('hidden')
-         }
-
-         btnIconX.onclick = () => {
-            containerBluerBg.classList.add('hidden')
-         }
-      </script>
    </body>
 </html>
