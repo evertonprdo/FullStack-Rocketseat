@@ -1,17 +1,21 @@
 # Application
 
 ## Summary
-
-main => entryPoint
+```
+main.js => entryPoint
 
 PageLoader => Main Controller
 
-SchedulesService => Schedules ApiService
-SchedulesPage => Sub Controller
-FormModal => Sub Controller
+schedules-service.js => Schedules Api Service
+schedules-page.js => Sub Controller
+form-modal.js => Sub Controller
+```
 
-## PageLoader
+## Classes
 
+### PageLoader
+```
+// props
 -  schedulesService
 -  schedulePage
 -  formModal
@@ -20,6 +24,7 @@ FormModal => Sub Controller
 -  -  instance classes;
 -  -  fetchSchedules()
 
+// methods
 -  fetchSchedules() => SchedulesPage.renderSchedules()
 -  openForm() => formModal.reset()
 -  toggleModal()
@@ -31,9 +36,10 @@ FormModal => Sub Controller
 -  -  schedules.post();
 -  -  fetchSchedules();
 -  -  toggleModal();
-
-## SchedulePage
-
+```
+### SchedulePage
+```
+// props
 -  queryDate
 -  set queryDate => iptDate.value = queryDate
 
@@ -46,6 +52,7 @@ FormModal => Sub Controller
 -  -  add event listeners;
 -  -  setup iptDate
 
+// methods
 -  onChangeIptDate() => set queryDate; callback(date)
 -  onClickRemoveSchedule() => callback(scheduleId)
 -  renderSchedule() =>
@@ -53,14 +60,16 @@ FormModal => Sub Controller
 -  -  sections.append(createItem(scheduleData))
 
 -  createItem()
-
-## FormModal
-
+```
+### FormModal
+```
+// props
 -  modal
 -  btnClose
 -  form
 -  inputs
 
+// methods
 -  constructor({ onSubmit, onClose }) =>
 -  -  get html elements;
 -  -  add event listeners;
@@ -71,13 +80,16 @@ FormModal => Sub Controller
 
 -  onIptDateChange() => set iptTime 'min' rule
 -  onSubmit() => get input values; callback(iptsValues)
-
-## SchedulesService
-
+```
+### SchedulesService
+```
+// props
 -  api
 -  endpoint = 'schedules'
 
+// methods
 -  get() => filterByDate()
 
 -  post()
 -  delete()
+```
