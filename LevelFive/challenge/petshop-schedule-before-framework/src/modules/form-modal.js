@@ -75,8 +75,8 @@ export class FormModal {
       const petName = this.#inputs.petName.value.trim()
       const description = this.#inputs.description.value.trim()
 
-      const date = this.#inputs.date.valueAsDate.toISOString().split('T')[0]
-      const time = this.#inputs.time.valueAsDate.toISOString().split('T')[1]
+      const date = this.#inputs.date.value
+      const time = this.#inputs.time.value
 
       callback({
          authorName,

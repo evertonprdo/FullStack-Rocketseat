@@ -54,20 +54,13 @@
          "authorName": "Ava White",
          "petName": "Mittens",
          "description": "Window Watching and Lap Sitting",
-         "date": "2024-11-30T19:00:00.000Z"
+         "date": "2024-11-30T20:00:00.000Z"
       },
       {
          "id": "1732727047675",
          "authorName": "Ethan Martinez",
          "petName": "Buster",
          "description": "Park Runs and Endless Energy",
-         "date": "2024-11-30T20:00:00.000Z"
-      },
-      {
-         "id": "1732727047676",
-         "authorName": "Isabella Lopez",
-         "petName": "Bella",
-         "description": "Spa Days and Fancy Bowties",
          "date": "2024-11-30T21:00:00.000Z"
       }
    ]

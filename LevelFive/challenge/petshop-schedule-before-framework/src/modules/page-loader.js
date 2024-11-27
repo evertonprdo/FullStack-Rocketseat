@@ -102,7 +102,7 @@ export class PageLoader {
          alert(error)
       } finally {
          this.#fetchSchedules(this.#schedulesPage.queryDate)
-         // this.#toggleModal()
+         this.#toggleModal()
       }
    }
 }

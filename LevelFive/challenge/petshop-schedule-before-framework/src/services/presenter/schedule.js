@@ -12,11 +12,13 @@ export class SchedulePresenter {
    }
 
    static toHTTPRequest({ authorName, petName, description, date, time }) {
+      const isoDate = dayjs(`${date} ${time}`).toISOString()
+
       return {
          authorName,
          petName,
          description,
-         date: `${date}T${time}`,
+         date: isoDate,
       }
    }
 }
