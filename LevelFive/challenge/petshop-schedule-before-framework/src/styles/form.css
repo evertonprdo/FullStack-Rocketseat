@@ -1,0 +1,122 @@
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+
+   & label {
+      font: var(--text-label-md);
+      color: var(--theme-content-primary);
+   }
+
+   & .input-wrapper {
+      --icon-img-url: '';
+
+      position: relative;
+
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      &::before {
+         content: '';
+         position: absolute;
+         background: var(--icon-img-url);
+         width: 20px;
+         height: 20px;
+         left: 12px;
+         pointer-events: none;
+
+         bottom: 15px;
+         z-index: 2;
+      }
+
+      &:hover > input,
+      &:hover > textarea {
+         border-color: var(--theme-border-secondary);
+      }
+
+      &:has(:focus) > input,
+      &:has(:focus) > textarea {
+         border-color: var(--theme-content-brand);
+      }
+   }
+
+   & > .inputs-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+   }
+
+   & > button {
+      margin-top: 12px;
+      align-self: flex-end;
+   }
+}
+
+button.btn-primary {
+   padding: 12px 20px;
+
+   color: #050505;
+   font: var(--text-label-lg);
+   text-transform: uppercase;
+
+   border: 1px solid #bdb4fa88;
+   border-radius: 8px;
+   background-color: var(--theme-content-brand);
+   transition: background-color var(--micro-transition);
+
+   &:hover {
+      background-color: var(--theme-bg-highlight);
+   }
+
+   &.filter-glow {
+      filter: drop-shadow(0px 0px 40px rgba(146, 130, 250, 0.3));
+   }
+}
+
+input,
+textarea {
+   all: unset;
+   box-sizing: border-box;
+
+   width: auto;
+   padding-block: 12px;
+   padding-inline: 12px;
+
+   font: inherit;
+   color: var(--theme-content-primary);
+
+   border-radius: 8px;
+   border: 1px solid var(--theme-border-primary);
+   background-color: transparent;
+
+   transition: border-color var(--micro-transition);
+}
+
+input[type='date'],
+input[type='time'] {
+   position: relative;
+
+   &::-webkit-calendar-picker-indicator {
+      opacity: 0;
+   }
+
+   &::after {
+      content: '';
+      position: absolute;
+      background: url('../assets/arrow-down.svg');
+      width: 20px;
+      height: 20px;
+      right: 12px;
+      pointer-events: none;
+
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+   }
+}
+
+input {
+   padding-inline: 40px 12px;
+}

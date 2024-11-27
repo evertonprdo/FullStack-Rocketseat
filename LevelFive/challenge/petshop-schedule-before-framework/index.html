@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link
+         rel="preconnect"
+         href="https://fonts.googleapis.com"
+      />
+      <link
+         rel="preconnect"
+         href="https://fonts.gstatic.com"
+         crossorigin
+      />
+
+      <meta charset="UTF-8" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0"
+      />
+      <title>World Pet Schedules</title>
+
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+
+   <body>
+      <div id="app">
+         <img
+            src="src/assets/logo.svg"
+            alt="logo"
+         />
+
+         <main>
+            <header>
+               <h1>Your schedule</h1>
+               <p>
+                  Here you can see all the clients and services scheduled for
+                  today.
+               </p>
+               <input
+                  id="ipt-date"
+                  type="date"
+               />
+            </header>
+
+            <section id="morning-list">
+               <header>
+                  <img src="src/assets/morning-icon.svg" />
+                  <h2>Morning</h2>
+                  <span>9 am - 12 pm</span>
+               </header>
+
+               <ul role="list"></ul>
+            </section>
+
+            <section id="afternoon-list">
+               <header>
+                  <img src="src/assets/afternoon-icon.svg" />
+                  <h2>Afternoon</h2>
+                  <span>1 pm - 6 pm</span>
+               </header>
+
+               <ul role="list"></ul>
+            </section>
+
+            <section id="night-list">
+               <header>
+                  <img src="src/assets/night-icon.svg" />
+                  <h2>Night</h2>
+                  <span>7 pm - 9 pm</span>
+               </header>
+
+               <ul role="list"></ul>
+            </section>
+         </main>
+
+         <footer>
+            <button
+               id="btn-new-schedule"
+               class="filter-glow btn-primary"
+            >
+               New Schedule
+            </button>
+         </footer>
+      </div>
+
+      <div
+         id="bluer-bg-container"
+         class="bg-bluer hidden"
+      >
+         <aside id="form-container">
+            <button id="btn-close">
+               <img src="./src/assets/x.svg" />
+            </button>
+
+            <header>
+               <h2>Schedule your appointment</h2>
+               <p>Fill in the customer details to schedule an appointment:</p>
+               <button></button>
+            </header>
+
+            <form>
+               <div
+                  class="input-wrapper"
+                  style="--icon-img-url: url(./src/assets/user.svg)"
+               >
+                  <label for="author-name">Author name</label>
+                  <input
+                     required
+                     id="author-name"
+                     type="text"
+                     placeholder="John Doe"
+                     minlength="3"
+                     maxlength="25"
+                  />
+               </div>
+
+               <div
+                  class="input-wrapper"
+                  style="--icon-img-url: url(./src/assets/pet-paw.svg)"
+               >
+                  <label for="pet-name">Pet name</label>
+                  <input
+                     required
+                     id="pet-name"
+                     type="text"
+                     placeholder="Cheddar"
+                     minlength="3"
+                     maxlength="25"
+                  />
+               </div>
+
+               <div class="input-wrapper">
+                  <label for="description">Service description</label>
+                  <textarea
+                     required
+                     id="description"
+                     placeholder="Bath and grooming"
+                     minlength="5"
+                     maxlength="25"
+                  ></textarea>
+               </div>
+
+               <div class="inputs-wrapper">
+                  <div
+                     class="input-wrapper"
+                     style="--icon-img-url: url(./src/assets/calendar.svg)"
+                  >
+                     <label for="form-date">Date</label>
+                     <input
+                        id="form-date"
+                        type="date"
+                     />
+                  </div>
+                  <div
+                     class="input-wrapper"
+                     style="--icon-img-url: url(./src/assets/clock.svg)"
+                  >
+                     <label for="form-time">Time</label>
+                     <input
+                        id="form-time"
+                        type="time"
+                        max="21:00"
+                     />
+                  </div>
+               </div>
+
+               <button
+                  id="btn-submit"
+                  class="btn-primary"
+               >
+                  Schedule
+               </button>
+            </form>
+         </aside>
+      </div>
+   </body>
+</html>
