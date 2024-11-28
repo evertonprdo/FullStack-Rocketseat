@@ -1,10 +1,10 @@
-import { Either, left, right } from '../either.ts'
+import { type Either, left, right } from '../either.ts'
 
 import { Ticket } from '../entities/ticket.ts'
-import { TicketsRepository } from '../repositories/tickets.repository.ts'
+import type { TicketsRepository } from '../repositories/tickets.repository.ts'
 
 import { ResourceNotFoundError } from './errors/resource-not-found.error.ts'
-import { TicketAlreadyClosedError } from './errors/ticket-already-closed.ts'
+import { TicketAlreadyClosedError } from './errors/ticket-already-closed.error.ts'
 
 interface CloseTicketUseCaseRequest {
    ticketId: string
@@ -16,7 +16,11 @@ type CloseTicketUseCaseResponse = Either<
 >
 
 export class CloseTicketUseCase {
-   constructor(private ticketsRepository: TicketsRepository) {}
+   private ticketsRepository: TicketsRepository
+
+   constructor(ticketsRepository: TicketsRepository) {
+      this.ticketsRepository = ticketsRepository
+   }
 
    async execute({
       ticketId,

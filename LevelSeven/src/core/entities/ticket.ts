@@ -1,4 +1,4 @@
-import { Optional } from '../types/optional.ts'
+import type { Optional } from '../../types/optional.ts'
 
 import { Entity } from './entity.ts'
 import { UniqueEntityId } from './unique-entity-id.ts'
@@ -6,8 +6,10 @@ import { UniqueEntityId } from './unique-entity-id.ts'
 import { User } from './user.ts'
 import { Equipment } from './equipment.ts'
 
+export type TicketStatus = 'OPEN' | 'CLOSED'
+
 interface TicketProps {
-   status: 'OPEN' | 'CLOSED'
+   status: TicketStatus
    description: string
 
    user: User

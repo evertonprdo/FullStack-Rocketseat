@@ -1,16 +1,20 @@
-import { Either, right } from '../either.ts'
+import { type Either, right } from '../either.ts'
 
-import { Ticket } from '../entities/ticket.ts'
-import { TicketsRepository } from '../repositories/tickets.repository.ts'
+import { Ticket, type TicketStatus } from '../entities/ticket.ts'
+import type { TicketsRepository } from '../repositories/tickets.repository.ts'
 
 interface FetchTicketsUseCaseRequest {
-   status?: 'OPEN' | 'CLOSED'
+   status?: TicketStatus
 }
 
 type FetchTicketsUseCaseResponse = Either<null, { tickets: Ticket[] }>
 
 export class FetchTicketsUseCase {
-   constructor(private ticketsRepository: TicketsRepository) {}
+   private ticketsRepository: TicketsRepository
+
+   constructor(ticketsRepository: TicketsRepository) {
+      this.ticketsRepository = ticketsRepository
+   }
 
    async execute({
       status,

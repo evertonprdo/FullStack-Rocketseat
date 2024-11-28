@@ -1,8 +1,8 @@
-import { Either, left, right } from '../either.ts'
+import { type Either, left, right } from '../either.ts'
 
 import { Ticket } from '../entities/ticket.ts'
 import { Equipment } from '../entities/equipment.ts'
-import { TicketsRepository } from '../repositories/tickets.repository.ts'
+import type { TicketsRepository } from '../repositories/tickets.repository.ts'
 
 import { NotAllowedError } from './errors/not-allowed.error.ts'
 import { ResourceNotFoundError } from './errors/resource-not-found.error.ts'
@@ -20,7 +20,11 @@ type UpdateTicketsUseCaseResponse = Either<
 >
 
 export class UpdateTicketsUseCase {
-   constructor(private ticketsRepository: TicketsRepository) {}
+   private ticketsRepository: TicketsRepository
+
+   constructor(ticketsRepository: TicketsRepository) {
+      this.ticketsRepository = ticketsRepository
+   }
 
    async execute({
       ticketId,

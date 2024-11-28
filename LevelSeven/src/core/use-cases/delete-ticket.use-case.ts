@@ -1,6 +1,6 @@
-import { Either, left, right } from '../either.ts'
+import { type Either, left, right } from '../either.ts'
 
-import { TicketsRepository } from '../repositories/tickets.repository.ts'
+import type { TicketsRepository } from '../repositories/tickets.repository.ts'
 import { ResourceNotFoundError } from './errors/resource-not-found.error.ts'
 
 interface DeleteTicketUseCaseRequest {
@@ -10,7 +10,11 @@ interface DeleteTicketUseCaseRequest {
 type DeleteTicketUseCaseResponse = Either<ResourceNotFoundError, null>
 
 export class DeleteTicketUseCase {
-   constructor(private ticketsRepository: TicketsRepository) {}
+   private ticketsRepository: TicketsRepository
+
+   constructor(ticketsRepository: TicketsRepository) {
+      this.ticketsRepository = ticketsRepository
+   }
 
    async execute({
       ticketId,

@@ -1,10 +1,10 @@
-import { Either, right } from '../either.ts'
+import { type Either, right } from '../either.ts'
 
 import { User } from '../entities/user.ts'
 import { Ticket } from '../entities/ticket.ts'
 import { Equipment } from '../entities/equipment.ts'
 
-import { TicketsRepository } from '../repositories/tickets.repository.ts'
+import type { TicketsRepository } from '../repositories/tickets.repository.ts'
 
 interface CreateTicketUseCaseRequest {
    userName: string
@@ -15,7 +15,11 @@ interface CreateTicketUseCaseRequest {
 type CreateTicketUseCaseResponse = Either<null, { ticket: Ticket }>
 
 export class CreateTicketUseCase {
-   constructor(private ticketsRepository: TicketsRepository) {}
+   private ticketsRepository: TicketsRepository
+
+   constructor(ticketsRepository: TicketsRepository) {
+      this.ticketsRepository = ticketsRepository
+   }
 
    async execute({
       userName,
