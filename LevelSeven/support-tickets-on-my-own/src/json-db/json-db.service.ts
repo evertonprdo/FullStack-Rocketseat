@@ -31,7 +31,10 @@ export class JsonDatabaseService {
          (item) => item.id === id,
       )
 
-      this.#database[table].splice(itemIndex, 1)
+      if (itemIndex > -1) {
+         this.#database[table].splice(itemIndex, 1)
+         this.#persist()
+      }
    }
 
    update<T extends DatabaseItems>(table: string, data: T) {
@@ -43,7 +46,13 @@ export class JsonDatabaseService {
          (item) => item.id === data.id,
       )
 
-      this.#database[table][itemIndex] = data
+      if (itemIndex > -1) {
+         this.#database[table][itemIndex] = {
+            ...this.#database[table][itemIndex],
+            ...data,
+         }
+         this.#persist()
+      }
    }
 
    insert<T extends DatabaseItems>(table: string, data: T) {
