@@ -1,0 +1,25 @@
+{
+   "name": "api-restaurant",
+   "version": "1.0.0",
+   "main": "index.js",
+   "scripts": {
+      "dev": "tsx watch src/server.ts",
+      "knex": "node --import tsx ./node_modules/knex/bin/cli.js"
+   },
+   "keywords": [],
+   "author": "evertonprdo",
+   "license": "ISC",
+   "description": "API to manage orders from a restaurant's tables",
+   "dependencies": {
+      "express": "^4.21.1",
+      "knex": "^3.1.0",
+      "sqlite3": "^5.1.7",
+      "zod": "^3.23.8"
+   },
+   "devDependencies": {
+      "@types/express": "^5.0.0",
+      "@types/node": "^22.10.1",
+      "tsx": "^4.19.2",
+      "typescript": "^5.7.2"
+   }
+}
